@@ -37,5 +37,6 @@
 
 ### karma 测试
 ### eslint
+### git tag 规范
 
 ### pnpm 替代lerna
