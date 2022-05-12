@@ -1,9 +1,8 @@
 @use 'sass:map';
 
-@use 'mixins/mixins'as *;
-@use 'mixins/var'as *;
-@use 'common/var'as *;
-
+@use 'mixins/mixins' as *;
+@use 'mixins/var' as *;
+@use 'common/var' as *;
 
 @include b(alert) {
   @include set-component-css-var('alert', $alert);
@@ -43,8 +42,10 @@
 
   @each $type in (success, info, warning, error) {
     @include m($type) {
-      @include css-var-from-global(('alert', 'bg-color'),
-        ('color', $type, 'light-9'));
+      @include css-var-from-global(
+        ('alert', 'bg-color'),
+        ('color', $type, 'light-9')
+      );
 
       &.is-light {
         background-color: getCssVar('alert', 'bg-color');
