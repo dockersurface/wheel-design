@@ -1,11 +1,26 @@
 {
   "name": "@wheel-design/themes",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Stencil component chalk theme.",
+  "main": "lib/index.css",
+  "style": "lib/index.css",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build"
   },
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "stencil",
+    "theme"
+  ],
+  "author": "1011273803@qq.com",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-sass": "^3.1.0",
+    "gulp-autoprefixer": "^4.0.0"
+  },
+  "dependencies": {}
 }
