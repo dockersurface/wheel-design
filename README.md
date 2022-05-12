@@ -1,19 +1,3 @@
-### 为什么用lerna
-- 组件级别解耦，独立版本控制，每个组件都有版本记录可追溯
-- 组件单独发布，支持灰度、版本回滚以及平滑升降级
-- 按需引用，用户安装具体某个组件包，无需配置即可实现按需加载的效果。
-- 关注点分离，降低大型复杂度、组件之间依赖清晰且可控制
-- 单一职责原则，降低开源基友的参与和贡献难度
-
-### lerna 常用命令
-- lerna init 初始化
-- lerna create 增加packages
-- lerna add module packages（lerna add module） 为package增加modules
-- lerna publish 发布npm包(实际 lerna version 很少直接使用，因为它包含在 lerna publish 中了，直接使用 lerna publish就好了。)
-- lerna bootstrap --hoist 安装依赖包
-- lerna clean 清理npm包
-
-### lerna 结合其它工具搭建Monorepo 项目的最佳实践。
 #### 1.优雅提交(commitizen && cz-lerna-changelog)
 - commitizen 是用来格式化 git commit message 的工具，它提供了一种问询式的方式去获取所需的提交信息。
 - cz-lerna-changelog 是专门为 Lerna 项目量身定制的提交规范，在问询的过程，会有类似影响哪些 package 的选择。如下：
@@ -38,5 +22,3 @@
 ### karma 测试
 ### eslint
 ### git tag 规范
-
-### pnpm 替代lerna
