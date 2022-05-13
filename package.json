@@ -79,10 +79,7 @@
     }
   },
   "lint-staged": {
-    "./**/*.{js}": [
-      "eslint --fix",
-      "git add"
-    ]
+    "*.{js,ts,jsx,tsx,md,json}": "eslint --fix"
   },
   "browserslist": [
     "> 1%",
