@@ -11,7 +11,7 @@ import glob from 'fast-glob'
 import { camelCase, upperFirst } from 'lodash'
 import { PKG_BRAND_NAME } from '@wheel-design/build-constants'
 import { epOutput, epRoot, localeRoot } from '@wheel-design/build-utils'
-import { version } from '../../../../packages/element-plus/version'
+import { version } from '../../../../packages/components/index'
 import { ElementPlusAlias } from '../plugins/wheel-design-alias'
 import {
   formatBundleFilename,
