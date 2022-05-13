@@ -8,7 +8,6 @@
   ],
   "scripts": {
     "cz": "git-cz",
-    "commit": "git cz",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "test:ssr": "vitest --config ./ssr-testing/vitest.config.ts",
@@ -37,11 +36,14 @@
   },
   "dependencies": {
     "dayjs": "^1.11.1",
-    "husky": "^8.0.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.4",
+    "@wheel-design/build": "workspace:^0.0.1",
+    "@wheel-design/build-utils": "workspace:^0.0.1",
+    "@wheel-design/eslint-config": "workspace:*",
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
     "@pnpm/find-workspace-packages": "^4.0.0",
     "@pnpm/logger": "^4.0.0",
     "@pnpm/types": "^8.0.0",
@@ -49,11 +51,10 @@
     "@types/gulp": "^4.0.9",
     "@types/node": "*",
     "@types/sass": "^1.43.1",
-    "@wheel-design/build": "workspace:^0.0.1",
-    "@wheel-design/build-utils": "workspace:^0.0.1",
-    "@wheel-design/eslint-config": "workspace:*",
-    "commitlint-config-cz": "^0.13.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.4",
     "jsdom": "16.4.0",
+    "lint-staged": "^12.3.8",
     "prettier": "^2.6.2",
     "pretty-quick": "^3.1.3",
     "rimraf": "^3.0.2",
@@ -61,20 +62,15 @@
     "sucrase": "^3.21.0",
     "ts-morph": "^14.0.0",
     "type-fest": "^2.12.2",
-    "typescript": "^4.6.3",
-    "yorkie": "^2.0.0"
+    "typescript": "^4.6.3"
   },
+  "peerDependencies": {},
   "engines": {
     "node": ">= 16"
   },
   "config": {
     "commitizen": {
-      "path": "cz-customizable"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -e -V"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "pnpm": {
@@ -83,7 +79,7 @@
     }
   },
   "lint-staged": {
-    "*.{vue,js,ts,jsx,tsx,md,json}": "eslint --fix"
+    "*.{js,ts,jsx,tsx,md,json}": "eslint --fix"
   },
   "browserslist": [
     "> 1%",
