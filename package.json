@@ -8,6 +8,8 @@
   ],
   "scripts": {
     "cz": "git-cz",
+    "start:components": "pnpm run -C packages/components start",
+    "generate:components": "pnpm run -C packages/components generate",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "test:ssr": "vitest --config ./ssr-testing/vitest.config.ts",
@@ -19,11 +21,11 @@
     "update:version": "sucrase-node scripts/update-version.ts",
     "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
     "clean:dist": "rimraf dist",
-    "build": "pnpm run -C internal/build start",
     "build:theme": "pnpm run -C packages/theme-chalk build",
+    "build:icons": "pnpm run -C packages/wheel-icons build:icons",
     "format": "prettier --write .",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 && pretty-quick --check --branch dev",
-    "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json && pretty-quick --branch dev",
+    "lint": "eslint . --ext .ts,.tsx,.json --max-warnings 0 && pretty-quick --check --branch dev",
+    "lint:fix": "eslint --fix . --ext .ts,.tsx && pretty-quick --branch dev",
     "lint:commit": "commitlint --from $(git merge-base dev HEAD) --to HEAD > ./commit-lint.txt",
     "docs:dev": "pnpm run -C docs dev",
     "docs:build": "pnpm run -C docs build",
@@ -31,17 +33,25 @@
     "docs:gen-locale": "pnpm run -C docs gen-locale",
     "docs:crowdin-credentials": "pnpm run -C docs crowdin-credentials",
     "stub": "pnpm run -r --parallel stub",
-    "prepare": "husky install",
-    "postinstall": "pnpm stub && concurrently \"pnpm gen:version\" \"pnpm run -C internal/metadata dev\""
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@svgr/core": "^5.5.0",
+    "@types/lodash": "^4.14.182",
+    "@types/lodash-es": "^4.17.6",
+    "@types/svgo": "^2.3.1",
+    "@wheel-design/components": "workspace:*",
+    "@wheel-design/theme-chalk": "workspace:*",
+    "camelcase": "^6.2.0",
     "dayjs": "^1.11.1",
-    "lodash": "^4.17.21"
+    "gulp": "^4.0.2",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
+    "lodash-unified": "^1.0.2",
+    "svgo": "^2.7.0",
+    "svgson": "^5.2.1"
   },
   "devDependencies": {
-    "@wheel-design/build": "workspace:^0.0.1",
-    "@wheel-design/build-utils": "workspace:^0.0.1",
-    "@wheel-design/eslint-config": "workspace:*",
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@pnpm/find-workspace-packages": "^4.0.0",
@@ -51,7 +61,15 @@
     "@types/gulp": "^4.0.9",
     "@types/node": "*",
     "@types/sass": "^1.43.1",
+    "@typescript-eslint/eslint-plugin": "^5.24.0",
+    "@typescript-eslint/parser": "^5.24.0",
+    "@wheel-design/icons": "workspace:^0.0.1",
+    "consola": "^2.15.3",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.15.0",
+    "eslint-define-config": "^1.3.0",
+    "eslint-plugin-react": "^7.29.4",
+    "babel-eslint": "10.1.0",
     "husky": "^7.0.4",
     "jsdom": "16.4.0",
     "lint-staged": "^12.3.8",
@@ -62,9 +80,8 @@
     "sucrase": "^3.21.0",
     "ts-morph": "^14.0.0",
     "type-fest": "^2.12.2",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.4"
   },
-  "peerDependencies": {},
   "engines": {
     "node": ">= 16"
   },
@@ -79,7 +96,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx,md}": "eslint --fix"
+    "*.{ts,tsx}": "eslint --fix"
   },
   "browserslist": [
     "> 1%",

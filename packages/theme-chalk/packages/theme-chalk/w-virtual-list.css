@@ -1,0 +1,1 @@
+.w-vl__wrapper{position:relative}.w-vl__wrapper:hover .w-virtual-scrollbar{opacity:1}.w-vl__wrapper.always-on .w-virtual-scrollbar{opacity:1}.w-vl__window{scrollbar-width:none}.w-vl__window::-webkit-scrollbar{display:none}.w-virtual-scrollbar{opacity:0;transition:opacity 340ms ease-out}.w-virtual-scrollbar.always-on{opacity:1}.w-vg__wrapper{position:relative}

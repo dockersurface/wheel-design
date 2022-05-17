@@ -1,16 +1,15 @@
-import path from 'path'
-import chalk from 'chalk'
-import { dest, parallel, series, src } from 'gulp'
-import gulpSass from 'gulp-sass'
-import dartSass from 'sass'
-import autoprefixer from 'gulp-autoprefixer'
-import cleanCSS from 'gulp-clean-css'
-import rename from 'gulp-rename'
-import consola from 'consola'
-import { epOutput } from '@wheel-design/build-utils'
+import path from 'path';
+import chalk from 'chalk';
+import { dest, parallel, series, src } from 'gulp';
+import gulpSass from 'gulp-sass';
+import dartSass from 'sass';
+import autoprefixer from 'gulp-autoprefixer';
+import cleanCSS from 'gulp-clean-css';
+import rename from 'gulp-rename';
+import consola from 'consola';
 
-const distFolder = path.resolve(__dirname, 'dist')
-const distBundle = path.resolve(epOutput, 'theme-chalk')
+const distFolder = path.resolve(__dirname, 'lib');
+const distBundle = path.resolve(__dirname, 'packages/theme-chalk');
 
 /**
  * compile theme-chalk scss & minify
@@ -18,28 +17,28 @@ const distBundle = path.resolve(epOutput, 'theme-chalk')
  * @returns
  */
 function buildThemeChalk() {
-  const sass = gulpSass(dartSass)
-  const noElPrefixFile = /(index|base|display)/
-  return src(path.resolve(__dirname, 'src/*.scss'))
-    .pipe(sass.sync())
-    .pipe(autoprefixer({ cascade: false }))
-    .pipe(
-      cleanCSS({}, (details) => {
-        consola.success(
-          `${chalk.cyan(details.name)}: ${chalk.yellow(
-            details.stats.originalSize / 1000
-          )} KB -> ${chalk.green(details.stats.minifiedSize / 1000)} KB`
+    const sass = gulpSass(dartSass);
+    const noElPrefixFile = /(index|base|display)/;
+    return src(path.resolve(__dirname, 'src/*.scss'))
+        .pipe(sass.sync())
+        .pipe(autoprefixer({ cascade: false }))
+        .pipe(
+            cleanCSS({}, (details) => {
+                consola.success(
+                    `${chalk.cyan(details.name)}: ${chalk.yellow(
+                        details.stats.originalSize / 1000
+                    )} KB -> ${chalk.green(details.stats.minifiedSize / 1000)} KB`
+                );
+            })
         )
-      })
-    )
-    .pipe(
-      rename((path) => {
-        if (!noElPrefixFile.test(path.basename)) {
-          path.basename = `el-${path.basename}`
-        }
-      })
-    )
-    .pipe(dest(distFolder))
+        .pipe(
+            rename((path) => {
+                if (!noElPrefixFile.test(path.basename)) {
+                    path.basename = `w-${path.basename}`;
+                }
+            })
+        )
+        .pipe(dest(distFolder));
 }
 
 /**
@@ -47,27 +46,27 @@ function buildThemeChalk() {
  * @returns
  */
 function buildDarkCssVars() {
-  const sass = gulpSass(dartSass)
-  return src(path.resolve(__dirname, 'src/dark/css-vars.scss'))
-    .pipe(sass.sync())
-    .pipe(autoprefixer({ cascade: false }))
-    .pipe(
-      cleanCSS({}, (details) => {
-        consola.success(
-          `${chalk.cyan(details.name)}: ${chalk.yellow(
-            details.stats.originalSize / 1000
-          )} KB -> ${chalk.green(details.stats.minifiedSize / 1000)} KB`
+    const sass = gulpSass(dartSass);
+    return src(path.resolve(__dirname, 'src/dark/css-vars.scss'))
+        .pipe(sass.sync())
+        .pipe(autoprefixer({ cascade: false }))
+        .pipe(
+            cleanCSS({}, (details) => {
+                consola.success(
+                    `${chalk.cyan(details.name)}: ${chalk.yellow(
+                        details.stats.originalSize / 1000
+                    )} KB -> ${chalk.green(details.stats.minifiedSize / 1000)} KB`
+                );
+            })
         )
-      })
-    )
-    .pipe(dest(`${distFolder}/dark`))
+        .pipe(dest(`${distFolder}/dark`));
 }
 
 /**
  * copy from packages/theme-chalk/dist to dist/element-plus/theme-chalk
  */
 export function copyThemeChalkBundle() {
-  return src(`${distFolder}/**`).pipe(dest(distBundle))
+    return src(`${distFolder}/**`).pipe(dest(distBundle));
 }
 
 /**
@@ -75,14 +74,9 @@ export function copyThemeChalkBundle() {
  */
 
 export function copyThemeChalkSource() {
-  return src(path.resolve(__dirname, 'src/**')).pipe(
-    dest(path.resolve(distBundle, 'src'))
-  )
+    return src(path.resolve(__dirname, 'src/**')).pipe(dest(path.resolve(distBundle, 'src')));
 }
 
-export const build = parallel(
-  copyThemeChalkSource,
-  series(buildThemeChalk, buildDarkCssVars, copyThemeChalkBundle)
-)
+export const build = parallel(copyThemeChalkSource, series(buildThemeChalk, buildDarkCssVars, copyThemeChalkBundle));
 
-export default build
+export default build;

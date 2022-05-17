@@ -1,8 +1,10 @@
 import { writeFile } from 'fs/promises'
 import path from 'path'
 import consola from 'consola'
-import { epRoot } from '@wheel-design/build-utils'
+
 import pkg from '../packages/components/package.json'
+
+export const epRoot = path.resolve('packages', 'wheel-design')
 // need to be checked
 
 function getVersion() {

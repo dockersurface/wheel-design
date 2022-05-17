@@ -1,7 +1,15 @@
 import consola from 'consola'
 import chalk from 'chalk'
-import { errorAndExit, getWorkspacePackages } from '@wheel-design/build-utils'
 import type { Project } from '@pnpm/find-workspace-packages'
+import { resolve } from 'path'
+
+export function errorAndExit(err: Error): never {
+  consola.error(err)
+  process.exit(1)
+}
+import findWorkspacePackages from '@pnpm/find-workspace-packages'
+export const getWorkspacePackages = () =>
+  findWorkspacePackages(resolve(__dirname, '..', '..', '..'))
 
 async function main() {
   const tagVersion = process.env.TAG_VERSION
@@ -24,7 +32,6 @@ async function main() {
     (await getWorkspacePackages()).map((pkg) => [pkg.manifest.name!, pkg])
   )
   const elementPlus = pkgs['element-plus'] || pkgs['@wheel-design/nightly']
-  const eslintConfig = pkgs['@wheel-design/eslint-config']
   const metadata = pkgs['@wheel-design/metadata']
 
   const writeVersion = async (project: Project) => {
@@ -37,7 +44,6 @@ async function main() {
 
   try {
     await writeVersion(elementPlus)
-    await writeVersion(eslintConfig)
     await writeVersion(metadata)
   } catch (err) {
     errorAndExit(err)

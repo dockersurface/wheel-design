@@ -10,9 +10,9 @@
   "main": "index.css",
   "unpkg": "index.css",
   "jsdelivr": "index.css",
-  "style": "index.css",
+  "style": "lib/index.css",
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf lib",
     "build": "gulp --require sucrase/register/ts"
   },
   "devDependencies": {
