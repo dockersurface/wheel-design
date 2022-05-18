@@ -1,9 +1,4 @@
 {
-  "files": [],
-  "references": [
-    { "path": "components" },
-    { "path": "theme-chalk" },
-    { "path": "wheel-design" },
-    { "path": "wheel-icons" }
-  ]
+    "files": [],
+    "references": [{ "path": "components" }, { "path": "theme-chalk" }, { "path": "wheel-icons" }]
 }

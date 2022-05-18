@@ -1,0 +1,151 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn cz
+
+PATH: 
+  /Users/david/.rvm/gems/ruby-2.6.3/bin:/Users/david/.rvm/gems/ruby-2.6.3@global/bin:/Users/david/.rvm/rubies/ruby-2.6.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/david/.cargo/bin:/Users/david/.rvm/gems/ruby-2.6.3/bin:/Users/david/.rvm/gems/ruby-2.6.3@global/bin:/Users/david/.rvm/rubies/ruby-2.6.3/bin:/usr/local/mysql/bin:/Users/david/Library/Android/sdk/tools:/Users/david/Library/Android/sdk/tools/bin:/Users/david/Library/Android/sdk/platform-tools:/Users/david/Library/Android/sdk/emulator:/Users/david/work/jiaads/GoRest/bin:/Users/david/.rvm/bin:/usr/local/mysql/bin:/Users/david/Library/Android/sdk/tools:/Users/david/Library/Android/sdk/tools/bin:/Users/david/Library/Android/sdk/platform-tools:/Users/david/Library/Android/sdk/emulator:/usr/local/go/bin:/Users/david/work/jiaads/GoRest/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  16.15.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/david/study/github-2021.10.9/BlockUI/package.json: Unexpected token / in JSON at position 3682
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:304:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "private": true,
+    "packageManager": "pnpm@7.0.0",
+    "workspaces": [
+      "packages/*",
+      "play",
+      "docs"
+    ],
+    "scripts": {
+      "cz": "git-cz",
+      "start:components": "pnpm run -C packages/components start",
+      "generate:components": "pnpm run -C packages/components generate",
+      "test": "vitest",
+      "test:coverage": "vitest --coverage",
+      "test:ssr": "vitest --config ./ssr-testing/vitest.config.ts",
+      "prepare:e2e": "if [ ! -d \"docs/.vitepress/dist\" ]; then pnpm run docs:build; fi;",
+      "dev": "pnpm -C play dev",
+      "gen": "bash ./scripts/gc.sh",
+      "gen:version": "sucrase-node scripts/gen-version.ts",
+      "diff:table": "sucrase-node scripts/build-table.ts",
+      "update:version": "sucrase-node scripts/update-version.ts",
+      "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
+      "clean:dist": "rimraf dist",
+      "build:theme": "pnpm run -C packages/theme-chalk build",
+      "build:icons": "pnpm run -C packages/wheel-icons build:icons",
+      "format": "prettier --write .",
+      "lint": "npm run lint:script",
+      "lint:script": "eslint packages/components --ext '.js,.jsx,.ts,.tsx'",
+      "lint:script-fix": "eslint packages/components --ext '.js,.jsx,.ts,.tsx' --fix",
+      "lint:style": "stylelint '**/*.{scss,sass}'",
+      "lint:style-fix": "stylelint '**/*.{scss,sass}' --fix",
+      "docs:dev": "pnpm run -C docs dev",
+      "docs:build": "pnpm run -C docs build",
+      "docs:serve": "pnpm run -C docs serve",
+      "docs:gen-locale": "pnpm run -C docs gen-locale",
+      "docs:crowdin-credentials": "pnpm run -C docs crowdin-credentials",
+      "stub": "pnpm run -r --parallel stub",
+      "prepare": "husky install"
+    },
+    "dependencies": {
+      "@svgr/core": "^5.5.0",
+      "@types/lodash": "^4.14.182",
+      "@types/lodash-es": "^4.17.6",
+      "@types/svgo": "^2.3.1",
+      "@wheel-design/components": "workspace:*",
+      "@wheel-design/theme-chalk": "workspace:*",
+      "camelcase": "^6.2.0",
+      "dayjs": "^1.11.1",
+      "gulp": "^4.0.2",
+      "lodash": "^4.17.21",
+      "lodash-es": "^4.17.21",
+      "lodash-unified": "^1.0.2",
+      "svgo": "^2.7.0",
+      "svgson": "^5.2.1"
+    },
+    "devDependencies": {
+      "@stencil/eslint-plugin": "^0.3.1",
+      "@commitlint/cli": "^16.2.3",
+      "@commitlint/config-conventional": "^16.2.1",
+      "@pnpm/find-workspace-packages": "^4.0.0",
+      "@pnpm/logger": "^4.0.0",
+      "@pnpm/types": "^8.0.0",
+      "@types/fs-extra": "^9.0.13",
+      "@types/gulp": "^4.0.9",
+      "react-is": "^16.13.1",
+      "@types/node": "*",
+      "@types/sass": "^1.43.1",
+      "@typescript-eslint/eslint-plugin": "^4.3.0",
+      "@typescript-eslint/parser": "^4.3.0",
+      "@wheel-design/icons": "workspace:^0.0.1",
+      "consola": "^2.15.3",
+      "cz-conventional-changelog": "^3.3.0",
+      "eslint": "^7.10.0",
+      "eslint-config-airbnb-typescript": "^10.0.2",
+      "eslint-plugin-import": "^2.22.1",
+      "eslint-plugin-jsx-a11y": "^6.3.1",
+      "eslint-plugin-react": "^7.21.2",
+      "stylelint": "^13.7.2",
+      "stylelint-config-sass-guidelines": "^7.1.0",
+      "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+      "stylelint-declaration-strict-value": "^1.6.1",
+      "stylelint-high-performance-animation": "^1.5.1",
+      "husky": "^7.0.4",
+      "jsdom": "16.4.0",
+      "lint-staged": "^12.3.8",
+      "prettier": "^2.6.2",
+      "pretty-quick": "^3.1.3",
+      "rimraf": "^3.0.2",
+      "sass": "^1.50.0",
+      "sucrase": "^3.21.0",
+      "ts-morph": "^14.0.0",
+      "type-fest": "^2.12.2",
+      "typescript": "^4.6.4"
+    },
+    "engines": {
+      "node": ">= 16"
+    },
+    "config": {
+      "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+      }
+    },
+    "pnpm": {
+      "overrides": {
+        "jsdom": "16.4.0"
+      }
+    },
+    "lint-staged": {
+      // "src/**/*.{js,jsx,ts,tsx}": [
+      //   "eslint --ext '.js,.jsx,.ts,.tsx' --fix"
+      // ],
+      "packages/components/src/**/*.{ts,tsx}": [
+        "eslint --ext '.js,.jsx,.ts,.tsx' --fix"
+      ],
+    },
+    "browserslist": [
+      "> 1%",
+      "not ie 11",
+      "not op_mini all"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

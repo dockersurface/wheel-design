@@ -1,6 +1,8 @@
 dist/
 www/
 loader/
+src/.umi/
+src/.umi-production/
 
 *~
 *.sw[mnpcod]
@@ -8,6 +10,7 @@ loader/
 *.lock
 *.tmp
 *.tmp.*
+**/*.puml
 log.txt
 *.sublime-project
 *.sublime-workspace
@@ -18,9 +21,12 @@ log.txt
 .sass-cache/
 .versions/
 node_modules/
+docs-dist/
 $RECYCLE.BIN/
 
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
+
+build-storybook

@@ -3,7 +3,8 @@ import { sass } from '@stencil/sass';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
 
 export const config: Config = {
-  namespace: 'components',
+  namespace: 'wheel-design-components',
+  taskQueue: 'async',
   globalStyle: 'src/global/variables.css',
   globalScript: 'src/global/app.ts',
   outputTargets: [

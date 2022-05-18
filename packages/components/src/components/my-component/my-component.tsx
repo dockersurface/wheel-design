@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'my-component',
@@ -6,28 +6,23 @@ import { Component, Prop, h } from '@stencil/core';
   shadow: true,
 })
 export class MyComponent {
-  /**
-   * The first name
-   */
-  @Prop() first: string;
-
-  /**
-   * The middle name
-   */
-  @Prop() middle: string;
-
-  /**
-   * The last name
-   */
-  @Prop() last: string;
-
   render() {
     return (
       <div>
-        <w-icon />
         <w-icon-absolute_stroked />
         <w-icon-alarm />
-        <w-image />
+        <div class="image-container">
+          none
+          <w-image fit="none" src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c259411.jpeg" />
+          contain
+          <w-image fit="contain" src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" />
+          cover
+          <w-image fit="cover" src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" />
+          fill
+          <w-image fit="fill" src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" />
+          scale-down
+          <w-image fit="scale-down" src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" />
+        </div>
       </div>
     );
   }

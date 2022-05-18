@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json.schemastore.org/stylelintrc.json",
+    "extends": "stylelint-config-sass-guidelines",
+    "defaultSeverity": "error",
+    "ignoreFiles": ["dist", "node_modules"],
+    "plugins": [
+        "stylelint-scss",
+        "stylelint-declaration-strict-value",
+        "stylelint-declaration-block-no-ignored-properties",
+        "stylelint-high-performance-animation"
+    ],
+    "rules": {
+        "order/properties-alphabetical-order": null,
+        "declaration-no-important": [
+            true,
+            {
+                "severity": "warning"
+            }
+        ],
+        "function-parentheses-space-inside": null,
+        "max-nesting-depth": [
+            5,
+            {
+                "ignoreAtRules": ["each", "media", "supports", "include", "keyframes"]
+            }
+        ],
+        "no-descending-specificity": null,
+        "selector-class-pattern": [
+            "(^(((?!(is|has|hui))[a-z]+){4,20}(\\-[a-z]+){0,2})(\\_\\_[a-z]+(\\-[a-z]+){0,2})?(\\-\\-[a-z]+(\\-[a-z]+){0,2}){0,2}$)|(^(row|container)$)",
+            {
+                "resolveNestedSelectors": true,
+                "message": "Selector should match hyphenated BEM-syntax (http://getbem.com/). State-Classes should be modifiers. (selector-class-pattern)"
+            }
+        ],
+        "declaration-block-no-duplicate-properties": true,
+        "declaration-block-no-shorthand-property-overrides": true,
+        "selector-type-no-unknown": [
+            true,
+            {
+                "ignore": ["custom-elements"]
+            }
+        ],
+        "order/order": null,
+        "scale-unlimited/declaration-strict-value": [
+            ["/color/", "font-size", "font-weight"],
+            {
+                "ignoreKeywords": {
+                    "/color/": ["transparent", "inherit"],
+                    "font-size": ["modular-scale(/d)", "ms(/d)", "inherit"],
+                    "font-weight": ["400", "500", "700", "inherit"]
+                },
+                "disableFix": true
+            }
+        ],
+        "plugin/declaration-block-no-ignored-properties": true,
+        "plugin/no-low-performance-animation-properties": [
+            true,
+            {
+                "severity": "warning"
+            }
+        ],
+        "scss/dollar-variable-pattern": null
+    }
+}
