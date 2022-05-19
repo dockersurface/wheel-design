@@ -1,17 +1,19 @@
 module.exports = {
     root: true,
     parserOptions: {
-        project: './packages/components/tsconfig.json',
+        project: 'packages/components/tsconfig.json',
     },
     extends: ['airbnb-typescript', 'plugin:@stencil/recommended'],
     ignorePatterns: [
         '*eslintrc*',
         'loader.js',
         'node_modules',
-        '/packages/components/www/build',
-        '/packages/components/stencil.config.ts',
-        '/packages/components/dist',
-        'packages/components/stencil-stories.ts',
+        'packages/components/www/build',
+        'packages/components/stencil.config.ts',
+        'packages/components/dist',
+        'packages/components/dist-storybook',
+        'stencil-stories.ts',
+        'stencil-stories.example.ts',
     ],
     // Severity should be one of the following: 0 = off, 1 = warn, 2 = error
     rules: {

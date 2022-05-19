@@ -8,7 +8,9 @@ describe('MODIFIER', () => {
   })
   class wbcmp {
     @State() stateIsWhatever: boolean = false;
+
     readonly componentName: string = 'block';
+
     render() {
       return (
         <div class={BEM(this, 'authenticated', this.stateIsWhatever && 'is-active')}>Hallo</div>
@@ -36,7 +38,9 @@ describe('BEM', () => {
   })
   class wbcmp {
     @State() stateIsWhatever: boolean = false;
+
     readonly componentName: string = 'block';
+
     render() {
       return (
         <div class={BEM(this, 'authenticated', this.stateIsWhatever && 'is-active')}>Hallo</div>

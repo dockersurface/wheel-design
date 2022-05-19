@@ -28,6 +28,7 @@
     "node_modules",
     "dist",
     "dist-storybook",
-    "./src/components/**/stencil-stories.ts"
+    "./src/components/**/stencil-stories.ts",
+    "./src/components/**/stencil-stories.example.ts"
   ]
 }

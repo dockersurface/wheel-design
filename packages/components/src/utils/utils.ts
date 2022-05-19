@@ -26,7 +26,7 @@ export function getClassPrefix(suffix: string): string {
  * @param name
  * @returns
  */
-export const camelCase = function (name) {
+const camelCase = function (name) {
   return name.replace(SPECIAL_CHARS_REGEXP, (_: any, _separator: any, letter: string, offset: any) => (offset ? letter.toUpperCase() : letter)).replace(MOZ_HACK_REGEXP, 'Moz$1');
 };
 

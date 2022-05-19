@@ -60,7 +60,7 @@ export class WImage {
    * Handles load
    * @param _event
    * @param image
-   **/
+   * */
   handleLoad(_event: Event, image: HTMLImageElement) {
     this.imageWidth = image.width;
     this.imageHeight = image.height;
@@ -71,7 +71,7 @@ export class WImage {
   /**
    * Handles error
    * @param error
-   **/
+   * */
   handleError(error: OnErrorEventHandlerNonNull) {
     console.error(error);
     this.loading = false;
@@ -81,7 +81,7 @@ export class WImage {
   /**
    * Loads image 加载图片
    * @returns
-   **/
+   * */
   loadImage() {
     if (!this.src) {
       return false;
@@ -100,7 +100,7 @@ export class WImage {
   /**
    * Gets image style 获取图片样式，需要兼容支不支持 objectfit
    * @returns image style
-   **/
+   * */
   getImageStyle(): CSSStyle {
     if (this.isSupportObjectFit()) {
       return { objectFit: this.fit };

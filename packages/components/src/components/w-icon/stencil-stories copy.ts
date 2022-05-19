@@ -5,42 +5,42 @@ import { a, h } from '../../utils/storybook';
 
 export default {
   ...{
-  "component": "my-component",
-  "args": {
-    "first": "",
-    "middle": "",
-    "last": "",
-    "modifier": "",
-    "maxFileSize": "",
-    "multilineShizzle": false
+  component: "my-component",
+  args: {
+    first: "",
+    middle: "",
+    last: "",
+    modifier: "",
+    maxFileSize: "",
+    multilineShizzle: false,
   },
-  "argTypes": {
-    "first": {
-      "description": "First Prop"
+  argTypes: {
+    first: {
+      description: "First Prop",
     },
-    "middle": {
-      "description": "Middle Prop"
+    middle: {
+      description: "Middle Prop",
     },
-    "last": {
-      "description": "Last Prop"
+    last: {
+      description: "Last Prop",
     },
-    "modifier": {
-      "description": "Modifier Prop"
+    modifier: {
+      description: "Modifier Prop",
     },
-    "maxFileSize": {
-      "description": "Specify size limit in Kb"
+    maxFileSize: {
+      description: "Specify size limit in Kb",
     },
-    "multilineShizzle": {
-      "description": "Yo im a multiline\ncan you see me?"
-    }
+    multilineShizzle: {
+      description: "Yo im a multiline\ncan you see me?",
+    },
   },
-  "customEvents": [
-    "removeButtonResponse"
+  customEvents: [
+    "removeButtonResponse",
   ],
-  "slots": {
-    "defaultSlot": "",
-    "right": ""
-  }
+  slots: {
+    defaultSlot: "",
+    right: "",
+  },
 },
   markdown,
   tpl: ({ id, first, middle, last, modifier, maxFileSize, multilineShizzle, slot }) => h`
@@ -54,5 +54,5 @@ export default {
 			multilineShizzle="${a(multilineShizzle)}"
     >
 		${slot}
-	</my-component>`
+	</my-component>`,
 };

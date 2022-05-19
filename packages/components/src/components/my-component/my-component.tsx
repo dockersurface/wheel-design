@@ -1,13 +1,13 @@
 import { Component, h, Prop, Host } from '@stencil/core';
 import { hostClasses, ComponentName } from '../../utils';
 import { format } from '../../utils/utils';
+
 @Component({
   tag: 'my-component',
   styleUrl: 'my-component.css',
   shadow: true,
 })
 export class MyComponent {
-
   @ComponentName() componentName;
 
   /** First Prop */
