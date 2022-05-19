@@ -22,6 +22,7 @@ log.txt
 .versions/
 node_modules/
 docs-dist/
+dist-storybook
 $RECYCLE.BIN/
 
 .DS_Store

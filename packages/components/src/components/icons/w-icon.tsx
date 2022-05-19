@@ -1,9 +1,9 @@
 import { Component, h } from '@stencil/core';
-import { Icon } from './icon';
+import { Icon } from '../w-icon/icon';
 
 @Component({
   tag: 'w-icon',
-  styleUrl: 'w-icon.scss',
+  styleUrl: '../w-icon/w-icon.scss',
   shadow: true,
 })
 export class WIcon {

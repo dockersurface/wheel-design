@@ -4,7 +4,11 @@
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
-    "lib": ["dom", "es2015", "es2017"],
+    "lib": [
+      "dom",
+      "es2015",
+      "es2017"
+    ],
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2018",
@@ -16,6 +20,14 @@
     "resolveJsonModule": true,
     "stripInternal": true
   },
-  "include": ["src", "./typings.d.ts"],
-  "exclude": ["node_modules", "dist-stencil", "dist-storybook", "./src/components/**/stencil-stories.ts"]
+  "include": [
+    "src",
+    "./typings.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "dist-storybook",
+    "./src/components/**/stencil-stories.ts"
+  ]
 }

@@ -1,11 +1,11 @@
 import { Component, h } from '@stencil/core';
-import { Icon } from '../icon';
+import { Icon } from '../w-icon/icon';
 
 type IconSize = 'inherit' | 'extra-small' | 'small' | 'default' | 'large' | 'extra-large';
 
 @Component({
   tag: 'w-icon-alarm',
-  styleUrl: '../w-icon.scss',
+  styleUrl: '../w-icon/w-icon.scss',
   shadow: true,
 })
 export class WIconAlarm {

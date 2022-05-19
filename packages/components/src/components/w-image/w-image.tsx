@@ -10,29 +10,19 @@ import { getClassPrefix, getScrollContainer, isInContainer } from '../../utils/u
   shadow: true,
 })
 export class WImage {
-  /**
-   * Prop src 图片链接
-   */
+  /** Prop src 图片链接 */
   @Prop() src: string;
 
-  /**
-   * Prop lazy 是否懒加载
-   */
+  /** Prop lazy 是否懒加载 */
   @Prop() lazy = false;
 
-  /**
-   * Prop fit 图片填充格式
-   */
+  /** Prop fit 图片填充格式 */
   @Prop() fit: 'none' | 'contain' | 'cover' | 'fill' | 'scale-down' = 'none';
 
-  /**
-   * Prop placeholder 加载文案
-   */
+  /** Prop placeholder 加载文案 */
   @Prop() placeholder = '加载中...';
 
-  /**
-   * Prop 错误文案
-   */
+  /** Prop 错误文案 */
   @Prop() errorText = '加载失败';
 
   @Element() element: HTMLElement;
@@ -63,17 +53,14 @@ export class WImage {
     this._handleLazyLoad();
   }
 
-  /**
-   * Determines whether support object fit is
-   */
+  // Determines whether support object fit is
   isSupportObjectFit = () => document.documentElement.style.objectFit !== undefined;
 
   /**
    * Handles load
-   *
    * @param _event
    * @param image
-   */
+   **/
   handleLoad(_event: Event, image: HTMLImageElement) {
     this.imageWidth = image.width;
     this.imageHeight = image.height;
@@ -83,9 +70,8 @@ export class WImage {
 
   /**
    * Handles error
-   *
    * @param error
-   */
+   **/
   handleError(error: OnErrorEventHandlerNonNull) {
     console.error(error);
     this.loading = false;
@@ -94,9 +80,8 @@ export class WImage {
 
   /**
    * Loads image 加载图片
-   *
    * @returns
-   */
+   **/
   loadImage() {
     if (!this.src) {
       return false;
@@ -114,9 +99,8 @@ export class WImage {
 
   /**
    * Gets image style 获取图片样式，需要兼容支不支持 objectfit
-   *
    * @returns image style
-   */
+   **/
   getImageStyle(): CSSStyle {
     if (this.isSupportObjectFit()) {
       return { objectFit: this.fit };
@@ -148,7 +132,6 @@ export class WImage {
 
   /**
    * Handles lazy load lazyload的句柄函数
-   *
    * @returns
    */
   handleLazyLoad() {

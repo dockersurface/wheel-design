@@ -1,14 +1,36 @@
-import { Component, h } from '@stencil/core';
-
+import { Component, h, Prop, Host } from '@stencil/core';
+import { hostClasses, ComponentName } from '../../utils';
+import { format } from '../../utils/utils';
 @Component({
   tag: 'my-component',
   styleUrl: 'my-component.css',
   shadow: true,
 })
 export class MyComponent {
+
+  @ComponentName() componentName;
+
+  /** First Prop */
+  @Prop() first: string;
+
+  /** Middle Prop */
+  @Prop() middle: string;
+
+  /** Last Prop */
+  @Prop() last: string;
+
+  private getText(): string {
+    return format(this.first, this.middle, this.last);
+  }
+
   render() {
+    const cssClasses = hostClasses({
+      componentName: this.componentName,
+    });
+
     return (
-      <div>
+      <Host class={`${cssClasses} dasdsa---dddsd container`}>
+        Hello, World! I'm <span> {this.getText()}</span>
         <w-icon-absolute_stroked />
         <w-icon-alarm />
         <div class="image-container">
@@ -23,7 +45,7 @@ export class MyComponent {
           scale-down
           <w-image fit="scale-down" src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" />
         </div>
-      </div>
+      </Host>
     );
   }
 }

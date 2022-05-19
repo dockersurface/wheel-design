@@ -3,4 +3,5 @@ node_modules
 coverage
 CHANGELOG.en-US.md
 pnpm-lock.yaml
+*.md
 docs/components.d.ts
