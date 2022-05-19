@@ -1,0 +1,291 @@
+{
+  "timestamp": "2022-05-19T15:06:59",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.15.2",
+    "typescriptVersion": "4.5.4"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/my-component/my-component.tsx",
+      "encapsulation": "shadow",
+      "tag": "my-component",
+      "readme": "# my-component\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "first",
+          "type": "string",
+          "mutable": false,
+          "attr": "first",
+          "reflectToAttr": false,
+          "docs": "First Prop",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "last",
+          "type": "string",
+          "mutable": false,
+          "attr": "last",
+          "reflectToAttr": false,
+          "docs": "Last Prop",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "middle",
+          "type": "string",
+          "mutable": false,
+          "attr": "middle",
+          "reflectToAttr": false,
+          "docs": "Middle Prop",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "w-icon-absolute_stroked",
+        "w-icon-alarm",
+        "w-image"
+      ],
+      "dependencyGraph": {
+        "my-component": [
+          "w-icon-absolute_stroked",
+          "w-icon-alarm",
+          "w-image"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/icons/w-icon.tsx",
+      "encapsulation": "shadow",
+      "tag": "w-icon",
+      "readme": "# sten-icon-alert-error-circle-c\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/icons/w-icon-absolute_stroked.tsx",
+      "encapsulation": "shadow",
+      "tag": "w-icon-absolute_stroked",
+      "readme": "# sten-icon-alert-error-circle-c\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "my-component"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "my-component": [
+          "w-icon-absolute_stroked"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/icons/w-icon-alarm.tsx",
+      "encapsulation": "shadow",
+      "tag": "w-icon-alarm",
+      "readme": "# sten-icon-alert-error-circle-c\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "my-component"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "my-component": [
+          "w-icon-alarm"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/w-image/w-image.tsx",
+      "encapsulation": "shadow",
+      "tag": "w-image",
+      "readme": "# my-component\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "errorText",
+          "type": "string",
+          "mutable": false,
+          "attr": "error-text",
+          "reflectToAttr": false,
+          "docs": "Prop 错误文案",
+          "docsTags": [],
+          "default": "'加载失败'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "fit",
+          "type": "\"contain\" | \"cover\" | \"fill\" | \"none\" | \"scale-down\"",
+          "mutable": false,
+          "attr": "fit",
+          "reflectToAttr": false,
+          "docs": "Prop fit 图片填充格式",
+          "docsTags": [],
+          "default": "'none'",
+          "values": [
+            {
+              "value": "contain",
+              "type": "string"
+            },
+            {
+              "value": "cover",
+              "type": "string"
+            },
+            {
+              "value": "fill",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "scale-down",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "lazy",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "lazy",
+          "reflectToAttr": false,
+          "docs": "Prop lazy 是否懒加载",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Prop placeholder 加载文案",
+          "docsTags": [],
+          "default": "'加载中...'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "mutable": false,
+          "attr": "src",
+          "reflectToAttr": false,
+          "docs": "Prop src 图片链接",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "scroll",
+          "target": "window",
+          "capture": true,
+          "passive": true
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "my-component"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "my-component": [
+          "w-image"
+        ]
+      }
+    }
+  ]
+}

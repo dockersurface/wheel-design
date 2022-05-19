@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.w-image {
+  width: 100px;
+  height: 100px;
+}

@@ -1,0 +1,17 @@
+{
+  "entries": [
+    "./components/icons/w-icon-absolute_stroked.js",
+    "./components/icons/w-icon-alarm.js",
+    "./components/icons/w-icon.js",
+    "./components/my-component/my-component.js",
+    "./components/w-image/w-image.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.15.2",
+    "typescriptVersion": "4.5.4"
+  },
+  "collections": [],
+  "bundles": [],
+  "global": "./global/app.js"
+}
