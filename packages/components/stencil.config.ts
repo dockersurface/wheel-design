@@ -11,7 +11,7 @@ const generatedConfig: Config = {
   namespace: 'lib',
   taskQueue: 'async',
   srcDir: 'src',
-  globalStyle: 'src/global/variables.css',
+  globalStyle: 'src/global/variables.scss',
   globalScript: 'src/global/app.ts',
   devServer: {
     reloadStrategy: 'hmr',
