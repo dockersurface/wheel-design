@@ -1,0 +1,115 @@
+.w-link {
+    --w-link-font-size: var(--w-font-size-base);
+    --w-link-font-weight: var(--w-font-weight-primary);
+    --w-link-text-color: var(--w-text-color-regular);
+    --w-link-hover-text-color: var(--w-color-primary);
+    --w-link-disabled-text-color: var(--w-text-color-placeholder);
+}
+.w-link {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    text-decoration: none;
+    outline: 0;
+    cursor: pointer;
+    padding: 0;
+    font-size: var(--w-link-font-size);
+    font-weight: var(--w-link-font-weight);
+    color: var(--w-link-text-color);
+}
+.w-link:hover {
+    color: var(--w-link-hover-text-color);
+}
+.w-link.is-underline:hover:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 0;
+    bottom: 0;
+    border-bottom: 1px solid var(--w-link-hover-text-color);
+}
+.w-link.is-disabled {
+    color: var(--w-link-disabled-text-color);
+    cursor: not-allowed;
+}
+.w-link [class*="w-icon-"] + span {
+    margin-left: 5px;
+}
+.w-link.w-link--default:after {
+    border-color: var(--w-link-hover-text-color);
+}
+.w-link__inner {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.w-link.w-link--primary {
+    --w-link-text-color: var(--w-color-primary);
+    --w-link-hover-text-color: var(--w-color-primary-light-3);
+    --w-link-disabled-text-color: var(--w-color-primary-light-5);
+}
+.w-link.w-link--primary:after {
+    border-color: var(--w-link-text-color);
+}
+.w-link.w-link--primary.is-underline:hover:after {
+    border-color: var(--w-link-text-color);
+}
+.w-link.w-link--success {
+    --w-link-text-color: var(--w-color-success);
+    --w-link-hover-text-color: var(--w-color-success-light-3);
+    --w-link-disabled-text-color: var(--w-color-success-light-5);
+}
+.w-link.w-link--success:after {
+    border-color: var(--w-link-text-color);
+}
+.w-link.w-link--success.is-underline:hover:after {
+    border-color: var(--w-link-text-color);
+}
+.w-link.w-link--warning {
+    --w-link-text-color: var(--w-color-warning);
+    --w-link-hover-text-color: var(--w-color-warning-light-3);
+    --w-link-disabled-text-color: var(--w-color-warning-light-5);
+}
+.w-link.w-link--warning:after {
+    border-color: var(--w-link-text-color);
+}
+.w-link.w-link--warning.is-underline:hover:after {
+    border-color: var(--w-link-text-color);
+}
+.w-link.w-link--danger {
+    --w-link-text-color: var(--w-color-danger);
+    --w-link-hover-text-color: var(--w-color-danger-light-3);
+    --w-link-disabled-text-color: var(--w-color-danger-light-5);
+}
+.w-link.w-link--danger:after {
+    border-color: var(--w-link-text-color);
+}
+.w-link.w-link--danger.is-underline:hover:after {
+    border-color: var(--w-link-text-color);
+}
+.w-link.w-link--error {
+    --w-link-text-color: var(--w-color-error);
+    --w-link-hover-text-color: var(--w-color-error-light-3);
+    --w-link-disabled-text-color: var(--w-color-error-light-5);
+}
+.w-link.w-link--error:after {
+    border-color: var(--w-link-text-color);
+}
+.w-link.w-link--error.is-underline:hover:after {
+    border-color: var(--w-link-text-color);
+}
+.w-link.w-link--info {
+    --w-link-text-color: var(--w-color-info);
+    --w-link-hover-text-color: var(--w-color-info-light-3);
+    --w-link-disabled-text-color: var(--w-color-info-light-5);
+}
+.w-link.w-link--info:after {
+    border-color: var(--w-link-text-color);
+}
+.w-link.w-link--info.is-underline:hover:after {
+    border-color: var(--w-link-text-color);
+}

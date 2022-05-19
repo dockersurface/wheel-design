@@ -1,0 +1,18 @@
+.w-tree-select {
+    --w-tree-node-hover-bg-color: var(--w-fill-color-light);
+    --w-tree-text-color: var(--w-text-color-regular);
+    --w-tree-expand-icon-color: var(--w-text-color-placeholder);
+}
+.w-tree-select__popper .w-tree-node__expand-icon {
+    margin-left: 8px;
+}
+.w-tree-select__popper .w-tree-node.is-checked > .w-tree-node__content .w-select-dropdown__item.selected::after {
+    content: none;
+}
+.w-tree-select__popper .w-select-dropdown__item {
+    flex: 1;
+    background: 0 0 !important;
+    padding-left: 0;
+    height: 20px;
+    line-height: 20px;
+}

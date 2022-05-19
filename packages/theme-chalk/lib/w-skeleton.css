@@ -1,0 +1,35 @@
+.w-skeleton {
+    --w-skeleton-color: var(--w-fill-color);
+    --w-skeleton-to-color: var(--w-fill-color-darker);
+}
+@keyframes w-skeleton-loading {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+.w-skeleton {
+    width: 100%;
+}
+.w-skeleton__first-line {
+    height: 16px;
+    margin-top: 16px;
+    background: var(--w-skeleton-color);
+}
+.w-skeleton__paragraph {
+    height: 16px;
+    margin-top: 16px;
+    background: var(--w-skeleton-color);
+}
+.w-skeleton.is-animated .w-skeleton__item {
+    background: linear-gradient(
+        90deg,
+        var(--w-skeleton-color) 25%,
+        var(--w-skeleton-to-color) 37%,
+        var(--w-skeleton-color) 63%
+    );
+    background-size: 400% 100%;
+    animation: w-skeleton-loading 1.4s ease infinite;
+}

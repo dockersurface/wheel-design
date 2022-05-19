@@ -1,0 +1,123 @@
+.w-progress {
+    position: relative;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+.w-progress__text {
+    font-size: 14px;
+    color: var(--w-text-color-regular);
+    margin-left: 5px;
+    min-width: 50px;
+    line-height: 1;
+}
+.w-progress__text i {
+    vertical-align: middle;
+    display: block;
+}
+.w-progress--circle,
+.w-progress--dashboard {
+    display: inline-block;
+}
+.w-progress--circle .w-progress__text,
+.w-progress--dashboard .w-progress__text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    transform: translate(0, -50%);
+}
+.w-progress--circle .w-progress__text i,
+.w-progress--dashboard .w-progress__text i {
+    vertical-align: middle;
+    display: inline-block;
+}
+.w-progress--without-text .w-progress__text {
+    display: none;
+}
+.w-progress--without-text .w-progress-bar {
+    padding-right: 0;
+    margin-right: 0;
+    display: block;
+}
+.w-progress--text-inside .w-progress-bar {
+    padding-right: 0;
+    margin-right: 0;
+}
+.w-progress.is-success .w-progress-bar__inner {
+    background-color: var(--w-color-success);
+}
+.w-progress.is-success .w-progress__text {
+    color: var(--w-color-success);
+}
+.w-progress.is-warning .w-progress-bar__inner {
+    background-color: var(--w-color-warning);
+}
+.w-progress.is-warning .w-progress__text {
+    color: var(--w-color-warning);
+}
+.w-progress.is-exception .w-progress-bar__inner {
+    background-color: var(--w-color-danger);
+}
+.w-progress.is-exception .w-progress__text {
+    color: var(--w-color-danger);
+}
+.w-progress-bar {
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+.w-progress-bar__outer {
+    height: 6px;
+    border-radius: 100px;
+    background-color: var(--w-border-color-lighter);
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+}
+.w-progress-bar__inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--w-color-primary);
+    text-align: right;
+    border-radius: 100px;
+    line-height: 1;
+    white-space: nowrap;
+    transition: width 0.6s ease;
+}
+.w-progress-bar__inner::after {
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle;
+}
+.w-progress-bar__inner--indeterminate {
+    transform: translateZ(0);
+    animation: indeterminate 3s infinite;
+}
+.w-progress-bar__innerText {
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 12px;
+    margin: 0 5px;
+}
+@keyframes progress {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 32px 0;
+    }
+}
+@keyframes indeterminate {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}

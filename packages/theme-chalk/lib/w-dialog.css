@@ -1,0 +1,184 @@
+:root {
+    --w-popup-modal-bg-color: var(--w-color-black);
+    --w-popup-modal-opacity: 0.5;
+}
+.v-modal-enter {
+    animation: v-modal-in var(--w-transition-duration-fast) ease;
+}
+.v-modal-leave {
+    animation: v-modal-out var(--w-transition-duration-fast) ease forwards;
+}
+@keyframes v-modal-in {
+    0% {
+        opacity: 0;
+    }
+}
+@keyframes v-modal-out {
+    100% {
+        opacity: 0;
+    }
+}
+.v-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: var(--w-popup-modal-opacity);
+    background: var(--w-popup-modal-bg-color);
+}
+.w-popup-parent--hidden {
+    overflow: hidden;
+}
+.w-dialog {
+    --w-dialog-width: 50%;
+    --w-dialog-margin-top: 15vh;
+    --w-dialog-bg-color: var(--w-bg-color);
+    --w-dialog-box-shadow: var(--w-box-shadow);
+    --w-dialog-title-font-size: var(--w-font-size-large);
+    --w-dialog-content-font-size: 14px;
+    --w-dialog-font-line-height: var(--w-font-line-height-primary);
+    --w-dialog-padding-primary: 20px;
+    --w-dialog-border-radius: var(--w-border-radius-small);
+    position: relative;
+    margin: var(--w-dialog-margin-top, 15vh) auto 50px;
+    background: var(--w-dialog-bg-color);
+    border-radius: var(--w-dialog-border-radius);
+    box-shadow: var(--w-dialog-box-shadow);
+    box-sizing: border-box;
+    width: var(--w-dialog-width, 50%);
+}
+.w-dialog:focus {
+    outline: 0 !important;
+}
+.w-dialog.is-fullscreen {
+    --w-dialog-width: 100%;
+    --w-dialog-margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+    overflow: auto;
+}
+.w-dialog__wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    margin: 0;
+}
+.w-dialog.is-draggable .w-dialog__header {
+    cursor: move;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.w-dialog__header {
+    padding: var(--w-dialog-padding-primary);
+    padding-bottom: 10px;
+    margin-right: 16px;
+    word-break: break-all;
+}
+.w-dialog__headerbtn {
+    position: absolute;
+    top: 6px;
+    right: 0;
+    padding: 0;
+    width: 54px;
+    height: 54px;
+    background: 0 0;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    font-size: var(--w-message-close-size, 16px);
+}
+.w-dialog__headerbtn .w-dialog__close {
+    color: var(--w-color-info);
+    font-size: inherit;
+}
+.w-dialog__headerbtn:focus .w-dialog__close,
+.w-dialog__headerbtn:hover .w-dialog__close {
+    color: var(--w-color-primary);
+}
+.w-dialog__title {
+    line-height: var(--w-dialog-font-line-height);
+    font-size: var(--w-dialog-title-font-size);
+    color: var(--w-text-color-primary);
+}
+.w-dialog__body {
+    padding: calc(var(--w-dialog-padding-primary) + 10px) var(--w-dialog-padding-primary);
+    color: var(--w-text-color-regular);
+    font-size: var(--w-dialog-content-font-size);
+    word-break: break-all;
+}
+.w-dialog__footer {
+    padding: var(--w-dialog-padding-primary);
+    padding-top: 10px;
+    text-align: right;
+    box-sizing: border-box;
+}
+.w-dialog--center {
+    text-align: center;
+}
+.w-dialog--center .w-dialog__body {
+    text-align: initial;
+    padding: 25px calc(var(--w-dialog-padding-primary) + 5px) 30px;
+}
+.w-dialog--center .w-dialog__footer {
+    text-align: inherit;
+}
+.w-overlay-dialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+}
+.dialog-fade-enter-active {
+    animation: modal-fade-in var(--w-transition-duration);
+}
+.dialog-fade-enter-active .w-overlay-dialog {
+    animation: dialog-fade-in var(--w-transition-duration);
+}
+.dialog-fade-leave-active {
+    animation: modal-fade-out var(--w-transition-duration);
+}
+.dialog-fade-leave-active .w-overlay-dialog {
+    animation: dialog-fade-out var(--w-transition-duration);
+}
+@keyframes dialog-fade-in {
+    0% {
+        transform: translate3d(0, -20px, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes dialog-fade-out {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, -20px, 0);
+        opacity: 0;
+    }
+}
+@keyframes modal-fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes modal-fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

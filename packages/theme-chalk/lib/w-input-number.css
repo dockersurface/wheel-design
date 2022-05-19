@@ -1,0 +1,141 @@
+.w-input-number {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    line-height: 30px;
+}
+.w-input-number .w-input__wrapper {
+    padding-left: 42px;
+    padding-right: 42px;
+}
+.w-input-number .w-input__inner {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    text-align: center;
+}
+.w-input-number .w-input__inner::-webkit-inner-spin-button,
+.w-input-number .w-input__inner::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+.w-input-number__decrease,
+.w-input-number__increase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    bottom: 1px;
+    width: 32px;
+    background: var(--w-fill-color-light);
+    color: var(--w-text-color-regular);
+    cursor: pointer;
+    font-size: 13px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.w-input-number__decrease:hover,
+.w-input-number__increase:hover {
+    color: var(--w-color-primary);
+}
+.w-input-number__decrease:hover ~ .w-input:not(.is-disabled) .w-input_wrapper,
+.w-input-number__increase:hover ~ .w-input:not(.is-disabled) .w-input_wrapper {
+    box-shadow: 0 0 0 1px var(--w-input-focus-border-color, var(--w-color-primary)) inset;
+}
+.w-input-number__decrease.is-disabled,
+.w-input-number__increase.is-disabled {
+    color: var(--w-disabled-text-color);
+    cursor: not-allowed;
+}
+.w-input-number__increase {
+    right: 1px;
+    border-radius: 0 var(--w-border-radius-base) var(--w-border-radius-base) 0;
+    border-left: var(--w-border);
+}
+.w-input-number__decrease {
+    left: 1px;
+    border-radius: var(--w-border-radius-base) 0 0 var(--w-border-radius-base);
+    border-right: var(--w-border);
+}
+.w-input-number.is-disabled .w-input-number__decrease,
+.w-input-number.is-disabled .w-input-number__increase {
+    border-color: var(--w-disabled-border-color);
+    color: var(--w-disabled-border-color);
+}
+.w-input-number.is-disabled .w-input-number__decrease:hover,
+.w-input-number.is-disabled .w-input-number__increase:hover {
+    color: var(--w-disabled-border-color);
+    cursor: not-allowed;
+}
+.w-input-number--large {
+    width: 180px;
+    line-height: 38px;
+}
+.w-input-number--large .w-input-number__decrease,
+.w-input-number--large .w-input-number__increase {
+    width: 40px;
+    font-size: 14px;
+}
+.w-input-number--large .w-input__wrapper {
+    padding-left: 47px;
+    padding-right: 47px;
+}
+.w-input-number--small {
+    width: 120px;
+    line-height: 22px;
+}
+.w-input-number--small .w-input-number__decrease,
+.w-input-number--small .w-input-number__increase {
+    width: 24px;
+    font-size: 12px;
+}
+.w-input-number--small .w-input__wrapper {
+    padding-left: 31px;
+    padding-right: 31px;
+}
+.w-input-number--small .w-input-number__decrease [class*="w-icon"],
+.w-input-number--small .w-input-number__increase [class*="w-icon"] {
+    transform: scale(0.9);
+}
+.w-input-number.is-without-controls .w-input__wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.w-input-number.is-controls-right .w-input__wrapper {
+    padding-left: 15px;
+    padding-right: 42px;
+}
+.w-input-number.is-controls-right .w-input-number__decrease,
+.w-input-number.is-controls-right .w-input-number__increase {
+    --w-input-number-controls-height: 15px;
+    height: var(--w-input-number-controls-height);
+    line-height: var(--w-input-number-controls-height);
+}
+.w-input-number.is-controls-right .w-input-number__decrease [class*="w-icon"],
+.w-input-number.is-controls-right .w-input-number__increase [class*="w-icon"] {
+    transform: scale(0.8);
+}
+.w-input-number.is-controls-right .w-input-number__increase {
+    bottom: auto;
+    left: auto;
+    border-radius: 0 var(--w-border-radius-base) 0 0;
+    border-bottom: var(--w-border);
+}
+.w-input-number.is-controls-right .w-input-number__decrease {
+    right: 1px;
+    top: auto;
+    left: auto;
+    border-right: none;
+    border-left: var(--w-border);
+    border-radius: 0 0 var(--w-border-radius-base) 0;
+}
+.w-input-number.is-controls-right[class*="large"] [class*="decrease"],
+.w-input-number.is-controls-right[class*="large"] [class*="increase"] {
+    --w-input-number-controls-height: 19px;
+}
+.w-input-number.is-controls-right[class*="small"] [class*="decrease"],
+.w-input-number.is-controls-right[class*="small"] [class*="increase"] {
+    --w-input-number-controls-height: 11px;
+}

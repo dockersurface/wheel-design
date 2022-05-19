@@ -1,0 +1,55 @@
+.w-breadcrumb {
+    font-size: 14px;
+    line-height: 1;
+}
+.w-breadcrumb::after,
+.w-breadcrumb::before {
+    display: table;
+    content: "";
+}
+.w-breadcrumb::after {
+    clear: both;
+}
+.w-breadcrumb__separator {
+    margin: 0 9px;
+    font-weight: 700;
+    color: var(--w-text-color-placeholder);
+}
+.w-breadcrumb__separator.w-icon {
+    margin: 0 6px;
+    font-weight: 400;
+}
+.w-breadcrumb__separator.w-icon svg {
+    vertical-align: middle;
+}
+.w-breadcrumb__item {
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.w-breadcrumb__inner {
+    color: var(--w-text-color-regular);
+}
+.w-breadcrumb__inner a,
+.w-breadcrumb__inner.is-link {
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--w-transition-color);
+    color: var(--w-text-color-primary);
+}
+.w-breadcrumb__inner a:hover,
+.w-breadcrumb__inner.is-link:hover {
+    color: var(--w-color-primary);
+    cursor: pointer;
+}
+.w-breadcrumb__item:last-child .w-breadcrumb__inner,
+.w-breadcrumb__item:last-child .w-breadcrumb__inner a,
+.w-breadcrumb__item:last-child .w-breadcrumb__inner a:hover,
+.w-breadcrumb__item:last-child .w-breadcrumb__inner:hover {
+    font-weight: 400;
+    color: var(--w-text-color-regular);
+    cursor: text;
+}
+.w-breadcrumb__item:last-child .w-breadcrumb__separator {
+    display: none;
+}

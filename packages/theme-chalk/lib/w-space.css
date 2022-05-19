@@ -1,0 +1,14 @@
+.w-space {
+    display: inline-flex;
+    vertical-align: top;
+}
+.w-space__item {
+    display: flex;
+    flex-wrap: wrap;
+}
+.w-space__item > * {
+    flex: 1;
+}
+.w-space--vertical {
+    flex-direction: column;
+}

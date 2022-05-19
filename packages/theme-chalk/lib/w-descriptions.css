@@ -1,0 +1,84 @@
+.w-descriptions {
+    --w-descriptions-table-border: 1px solid var(--w-border-color-lighter);
+    --w-descriptions-item-bordered-label-background: var(--w-fill-color-light);
+    box-sizing: border-box;
+    font-size: var(--w-font-size-base);
+    color: var(--w-text-color-primary);
+}
+.w-descriptions__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.w-descriptions__title {
+    color: var(--w-text-color-primary);
+    font-size: 16px;
+    font-weight: 700;
+}
+.w-descriptions__body {
+    background-color: var(--w-fill-color-blank);
+}
+.w-descriptions__body .w-descriptions__table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.w-descriptions__body .w-descriptions__table .w-descriptions__cell {
+    box-sizing: border-box;
+    text-align: left;
+    font-weight: 400;
+    line-height: 23px;
+    font-size: 14px;
+}
+.w-descriptions__body .w-descriptions__table .w-descriptions__cell.is-left {
+    text-align: left;
+}
+.w-descriptions__body .w-descriptions__table .w-descriptions__cell.is-center {
+    text-align: center;
+}
+.w-descriptions__body .w-descriptions__table .w-descriptions__cell.is-right {
+    text-align: right;
+}
+.w-descriptions__body .w-descriptions__table.is-bordered .w-descriptions__cell {
+    border: var(--w-descriptions-table-border);
+    padding: 8px 11px;
+}
+.w-descriptions__body .w-descriptions__table:not(.is-bordered) .w-descriptions__cell {
+    padding-bottom: 12px;
+}
+.w-descriptions--large {
+    font-size: 14px;
+}
+.w-descriptions--large .w-descriptions__header {
+    margin-bottom: 20px;
+}
+.w-descriptions--large .w-descriptions__header .w-descriptions__title {
+    font-size: 16px;
+}
+.w-descriptions--large .w-descriptions__body .w-descriptions__table .w-descriptions__cell {
+    font-size: 14px;
+}
+.w-descriptions--large .w-descriptions__body .w-descriptions__table.is-bordered .w-descriptions__cell {
+    padding: 12px 15px;
+}
+.w-descriptions--large .w-descriptions__body .w-descriptions__table:not(.is-bordered) .w-descriptions__cell {
+    padding-bottom: 16px;
+}
+.w-descriptions--small {
+    font-size: 12px;
+}
+.w-descriptions--small .w-descriptions__header {
+    margin-bottom: 12px;
+}
+.w-descriptions--small .w-descriptions__header .w-descriptions__title {
+    font-size: 14px;
+}
+.w-descriptions--small .w-descriptions__body .w-descriptions__table .w-descriptions__cell {
+    font-size: 12px;
+}
+.w-descriptions--small .w-descriptions__body .w-descriptions__table.is-bordered .w-descriptions__cell {
+    padding: 4px 7px;
+}
+.w-descriptions--small .w-descriptions__body .w-descriptions__table:not(.is-bordered) .w-descriptions__cell {
+    padding-bottom: 8px;
+}

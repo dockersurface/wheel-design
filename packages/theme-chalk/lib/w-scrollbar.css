@@ -1,0 +1,67 @@
+.w-scrollbar {
+    --w-scrollbar-opacity: 0.3;
+    --w-scrollbar-bg-color: var(--w-text-color-secondary);
+    --w-scrollbar-hover-opacity: 0.5;
+    --w-scrollbar-hover-bg-color: var(--w-text-color-secondary);
+}
+.w-scrollbar {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+.w-scrollbar__wrap {
+    overflow: auto;
+    height: 100%;
+}
+.w-scrollbar__wrap--hidden-default {
+    scrollbar-width: none;
+}
+.w-scrollbar__wrap--hidden-default::-webkit-scrollbar {
+    display: none;
+}
+.w-scrollbar__thumb {
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    border-radius: inherit;
+    background-color: var(--w-scrollbar-bg-color, var(--w-text-color-secondary));
+    transition: var(--w-transition-duration) background-color;
+    opacity: var(--w-scrollbar-opacity, 0.3);
+}
+.w-scrollbar__thumb:hover {
+    background-color: var(--w-scrollbar-hover-bg-color, var(--w-text-color-secondary));
+    opacity: var(--w-scrollbar-hover-opacity, 0.5);
+}
+.w-scrollbar__bar {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    z-index: 1;
+    border-radius: 4px;
+}
+.w-scrollbar__bar.is-vertical {
+    width: 6px;
+    top: 2px;
+}
+.w-scrollbar__bar.is-vertical > div {
+    width: 100%;
+}
+.w-scrollbar__bar.is-horizontal {
+    height: 6px;
+    left: 2px;
+}
+.w-scrollbar__bar.is-horizontal > div {
+    height: 100%;
+}
+.w-scrollbar-fade-enter-active {
+    transition: opacity 340ms ease-out;
+}
+.w-scrollbar-fade-leave-active {
+    transition: opacity 120ms ease-out;
+}
+.w-scrollbar-fade-enter-from,
+.w-scrollbar-fade-leave-active {
+    opacity: 0;
+}

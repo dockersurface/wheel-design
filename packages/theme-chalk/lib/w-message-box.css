@@ -1,0 +1,238 @@
+:root {
+    --w-popup-modal-bg-color: var(--w-color-black);
+    --w-popup-modal-opacity: 0.5;
+}
+.v-modal-enter {
+    animation: v-modal-in var(--w-transition-duration-fast) ease;
+}
+.v-modal-leave {
+    animation: v-modal-out var(--w-transition-duration-fast) ease forwards;
+}
+@keyframes v-modal-in {
+    0% {
+        opacity: 0;
+    }
+}
+@keyframes v-modal-out {
+    100% {
+        opacity: 0;
+    }
+}
+.v-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: var(--w-popup-modal-opacity);
+    background: var(--w-popup-modal-bg-color);
+}
+.w-popup-parent--hidden {
+    overflow: hidden;
+}
+.w-message-box {
+    --w-messagebox-title-color: var(--w-text-color-primary);
+    --w-messagebox-width: 420px;
+    --w-messagebox-border-radius: 4px;
+    --w-messagebox-font-size: var(--w-font-size-large);
+    --w-messagebox-content-font-size: var(--w-font-size-base);
+    --w-messagebox-content-color: var(--w-text-color-regular);
+    --w-messagebox-error-font-size: 12px;
+    --w-messagebox-padding-primary: 15px;
+}
+.w-message-box {
+    display: inline-block;
+    width: var(--w-messagebox-width);
+    padding-bottom: 10px;
+    vertical-align: middle;
+    background-color: var(--w-bg-color);
+    border-radius: var(--w-messagebox-border-radius);
+    border: 1px solid var(--w-border-color-lighter);
+    font-size: var(--w-messagebox-font-size);
+    box-shadow: var(--w-box-shadow-light);
+    text-align: left;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.w-message-box:focus {
+    outline: 0 !important;
+}
+.w-overlay.is-message-box .w-overlay-message-box {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+}
+.w-overlay.is-message-box .w-overlay-message-box::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+}
+.w-message-box.is-draggable .w-message-box__header {
+    cursor: move;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.w-message-box__header {
+    position: relative;
+    padding: var(--w-messagebox-padding-primary);
+    padding-bottom: 10px;
+}
+.w-message-box__title {
+    padding-left: 0;
+    margin-bottom: 0;
+    font-size: var(--w-messagebox-font-size);
+    line-height: 1;
+    color: var(--w-messagebox-title-color);
+}
+.w-message-box__headerbtn {
+    position: absolute;
+    top: var(--w-messagebox-padding-primary);
+    right: var(--w-messagebox-padding-primary);
+    padding: 0;
+    border: none;
+    outline: 0;
+    background: 0 0;
+    font-size: var(--w-message-close-size, 16px);
+    cursor: pointer;
+}
+.w-message-box__headerbtn .w-message-box__close {
+    color: var(--w-color-info);
+    font-size: inherit;
+}
+.w-message-box__headerbtn:focus .w-message-box__close,
+.w-message-box__headerbtn:hover .w-message-box__close {
+    color: var(--w-color-primary);
+}
+.w-message-box__content {
+    padding: 10px var(--w-messagebox-padding-primary);
+    color: var(--w-messagebox-content-color);
+    font-size: var(--w-messagebox-content-font-size);
+}
+.w-message-box__container {
+    position: relative;
+}
+.w-message-box__input {
+    padding-top: 15px;
+}
+.w-message-box__input div.invalid > input {
+    border-color: var(--w-color-error);
+}
+.w-message-box__input div.invalid > input:focus {
+    border-color: var(--w-color-error);
+}
+.w-message-box__status {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px !important;
+}
+.w-message-box__status::before {
+    padding-left: 1px;
+}
+.w-message-box__status.w-icon {
+    position: absolute;
+}
+.w-message-box__status + .w-message-box__message {
+    padding-left: 36px;
+    padding-right: 12px;
+    word-break: break-word;
+}
+.w-message-box__status.w-message-box-icon--success {
+    --w-messagebox-color: var(--w-color-success);
+    color: var(--w-messagebox-color);
+}
+.w-message-box__status.w-message-box-icon--info {
+    --w-messagebox-color: var(--w-color-info);
+    color: var(--w-messagebox-color);
+}
+.w-message-box__status.w-message-box-icon--warning {
+    --w-messagebox-color: var(--w-color-warning);
+    color: var(--w-messagebox-color);
+}
+.w-message-box__status.w-message-box-icon--error {
+    --w-messagebox-color: var(--w-color-error);
+    color: var(--w-messagebox-color);
+}
+.w-message-box__message {
+    margin: 0;
+}
+.w-message-box__message p {
+    margin: 0;
+    line-height: 24px;
+}
+.w-message-box__errormsg {
+    color: var(--w-color-error);
+    font-size: var(--w-messagebox-error-font-size);
+    min-height: 18px;
+    margin-top: 2px;
+}
+.w-message-box__btns {
+    padding: 5px 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+.w-message-box__btns button:nth-child(2) {
+    margin-left: 10px;
+}
+.w-message-box__btns-reverse {
+    flex-direction: row-reverse;
+}
+.w-message-box--center .w-message-box__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.w-message-box--center .w-message-box__status {
+    position: relative;
+    top: auto;
+    padding-right: 5px;
+    text-align: center;
+    transform: translateY(-1px);
+}
+.w-message-box--center .w-message-box__message {
+    margin-left: 0;
+}
+.w-message-box--center .w-message-box__btns {
+    justify-content: center;
+}
+.w-message-box--center .w-message-box__content {
+    padding-left: calc(var(--w-messagebox-padding-primary) + 12px);
+    padding-right: calc(var(--w-messagebox-padding-primary) + 12px);
+    text-align: center;
+}
+.fade-in-linear-enter-active .w-overlay-message-box {
+    animation: msgbox-fade-in var(--w-transition-duration);
+}
+.fade-in-linear-leave-active .w-overlay-message-box {
+    animation: msgbox-fade-in var(--w-transition-duration) reverse;
+}
+@keyframes msgbox-fade-in {
+    0% {
+        transform: translate3d(0, -20px, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes msgbox-fade-out {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, -20px, 0);
+        opacity: 0;
+    }
+}

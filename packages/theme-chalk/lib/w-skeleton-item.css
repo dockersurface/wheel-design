@@ -1,0 +1,59 @@
+.w-skeleton {
+    --w-skeleton-circle-size: var(--w-avatar-size);
+}
+.w-skeleton__item {
+    background: var(--w-skeleton-color);
+    display: inline-block;
+    height: 16px;
+    border-radius: var(--w-border-radius-base);
+    width: 100%;
+}
+.w-skeleton__circle {
+    border-radius: 50%;
+    width: var(--w-skeleton-circle-size);
+    height: var(--w-skeleton-circle-size);
+    line-height: var(--w-skeleton-circle-size);
+}
+.w-skeleton__button {
+    height: 40px;
+    width: 64px;
+    border-radius: 4px;
+}
+.w-skeleton__p {
+    width: 100%;
+}
+.w-skeleton__p.is-last {
+    width: 61%;
+}
+.w-skeleton__p.is-first {
+    width: 33%;
+}
+.w-skeleton__text {
+    width: 100%;
+    height: var(--w-font-size-small);
+}
+.w-skeleton__caption {
+    height: var(--w-font-size-extra-small);
+}
+.w-skeleton__h1 {
+    height: var(--w-font-size-extra-large);
+}
+.w-skeleton__h3 {
+    height: var(--w-font-size-large);
+}
+.w-skeleton__h5 {
+    height: var(--w-font-size-medium);
+}
+.w-skeleton__image {
+    width: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+}
+.w-skeleton__image svg {
+    color: var(--w-svg-monochrome-grey);
+    fill: currentColor;
+    width: 22%;
+    height: 22%;
+}
