@@ -31,9 +31,9 @@ export class MyComponent {
     return (
       <Host class={`${cssClasses} dasdsa---dddsd container`}>
         Hello, World! I'm <span> {this.getText()}</span>
-        <w-icon-absolute_stroked />
-        <w-icon-alarm />
-        <div class="image-container">
+        {/* <w-icon-absolute_stroked />
+        <w-icon-alarm /> */}
+        {/* <div class="image-container">
           none
           <w-image fit="none" src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c259411.jpeg" />
           contain
@@ -44,7 +44,7 @@ export class MyComponent {
           <w-image fit="fill" src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" />
           scale-down
           <w-image fit="scale-down" src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" />
-        </div>
+        </div> */}
       </Host>
     );
   }

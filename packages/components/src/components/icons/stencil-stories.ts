@@ -5,15 +5,15 @@ import { a, h } from '../../utils/storybook';
 
 export default {
   ...{
-  "component": "w-icon",
-  "args": {},
-  "argTypes": {},
-  "customEvents": [],
-  "slots": {}
-},
+    component: 'Components/w-icon',
+    args: {},
+    argTypes: {},
+    customEvents: [],
+    slots: {},
+  },
   markdown,
   tpl: ({ id }) => h`
     <w-icon
       id="${a(id)}"
-    ></w-icon>`
+    ></w-icon>`,
 };

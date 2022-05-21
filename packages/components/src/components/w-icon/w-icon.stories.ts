@@ -2,7 +2,7 @@ import { setupStory, setupVariant, h, setupComposition } from '../../utils/story
 import stencilStories from './stencil-stories.example';
 
 const Story = setupStory(stencilStories, {
-  category: 'Components/My Component',
+  category: 'Components/w-icon',
   argDefaults: {
     modifier: '',
     first: 'First',

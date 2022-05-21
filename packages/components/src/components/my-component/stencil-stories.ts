@@ -5,26 +5,26 @@ import { a, h } from '../../utils/storybook';
 
 export default {
   ...{
-  "component": "my-component",
-  "args": {
-    "first": "",
-    "middle": "",
-    "last": ""
-  },
-  "argTypes": {
-    "first": {
-      "description": "First Prop"
+    component: 'my-component',
+    args: {
+      first: '',
+      middle: '',
+      last: '',
     },
-    "middle": {
-      "description": "Middle Prop"
+    argTypes: {
+      first: {
+        description: 'First Prop',
+      },
+      middle: {
+        description: 'Middle Prop',
+      },
+      last: {
+        description: 'Last Prop',
+      },
     },
-    "last": {
-      "description": "Last Prop"
-    }
+    customEvents: [],
+    slots: {},
   },
-  "customEvents": [],
-  "slots": {}
-},
   markdown,
   tpl: ({ id, first, middle, last }) => h`
     <my-component
@@ -32,5 +32,5 @@ export default {
 			first="${a(first)}"
 			middle="${a(middle)}"
 			last="${a(last)}"
-    ></my-component>`
+    ></my-component>`,
 };

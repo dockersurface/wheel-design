@@ -5,15 +5,14 @@ import { a, h } from '../../utils/storybook';
 
 export default {
   ...{
-  "component": "my-XXX",
-  "args": {},
-  "argTypes": {},
-  "customEvents": [],
-  "slots": {}
-},
+    component: 'w-icon',
+    args: {},
+    argTypes: {},
+    customEvents: [],
+    slots: {},
+  },
   markdown,
   tpl: ({ id }) => h`
-    <my-XXX
-      id="${a(id)}"
-    ></my-XXX>`
+  <w-icon-alarm></w-icon-alarm>
+  <w-icon-absolute_stroked></w-icon-absolute_stroked>`,
 };
