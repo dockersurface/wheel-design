@@ -13,6 +13,6 @@ export default {
   },
   markdown,
   tpl: ({ id }) => h`
-  <w-icon-alarm></w-icon-alarm>
+  <w-icon-alarm id="${a(id)}"></w-icon-alarm>
   <w-icon-absolute_stroked></w-icon-absolute_stroked>`,
 };
