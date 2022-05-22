@@ -1,80 +1,12 @@
-import { h } from './index-1a53a42a.js';
+'use strict';
 
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+const index$1 = require('./index-4658e1c0.js');
+const index = require('./index-956d91b4.js');
 
-function createCommonjsModule(fn, basedir, module) {
-	return module = {
-		path: basedir,
-		exports: {},
-		require: function (path, base) {
-			return commonjsRequire();
-		}
-	}, fn(module, module.exports), module.exports;
-}
-
-function commonjsRequire () {
-	throw new Error('Dynamic requires are not currently supported by @rollup/plugin-commonjs');
-}
-
-var classnames = createCommonjsModule(function (module) {
-/*!
-  Copyright (c) 2018 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString === Object.prototype.toString) {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes.push(key);
-						}
-					}
-				} else {
-					classes.push(arg.toString());
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
-var svgson_umd = createCommonjsModule(function (module, exports) {
+var svgson_umd = index.createCommonjsModule(function (module, exports) {
 (function (global, factory) {
   module.exports = factory() ;
-}(commonjsGlobal, (function () {
+}(index.commonjsGlobal, (function () {
   /*!
    * isobject <https://github.com/jonschlinkert/isobject>
    *
@@ -1313,7 +1245,7 @@ const BASE_CLASS_PREFIX = 'semi';
 // icon.tsx
 const Icon = props => {
   const { svg, spin = false, rotate, style, className, prefixCls = BASE_CLASS_PREFIX, type, size = 'default' } = props;
-  const classes = classnames(`${prefixCls}-icon`, {
+  const classes = index.classnames(`${prefixCls}-icon`, {
     [`${prefixCls}-icon-extra-small`]: size === 'extra-small',
     [`${prefixCls}-icon-small`]: size === 'small',
     [`${prefixCls}-icon-default`]: size === 'default',
@@ -1327,7 +1259,7 @@ const Icon = props => {
     outerStyle.transform = `rotate(${rotate}deg)`;
   }
   Object.assign(outerStyle, style);
-  return h("span", { style: outerStyle, class: classes, role: "img", "aria-label": type, innerHTML: svgson_umd.stringify(svg) });
+  return index$1.h("span", { style: outerStyle, class: classes, role: "img", "aria-label": type, innerHTML: svgson_umd.stringify(svg) });
 };
 
-export { Icon as I, classnames as c };
+exports.Icon = Icon;

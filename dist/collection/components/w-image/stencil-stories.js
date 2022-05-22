@@ -5,7 +5,7 @@ export default {
   ...{
     component: 'w-image',
     args: {
-      src: '',
+      src: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
       lazy: false,
       fit: '',
       placeholder: '',
@@ -40,5 +40,6 @@ export default {
 			fit="${a(fit)}"
 			placeholder="${a(placeholder)}"
 			errorText="${a(errorText)}"
-    ></w-image>`,
+    ></w-image>
+    `,
 };

@@ -13,5 +13,5 @@ const patchBrowser = () => {
 };
 
 patchBrowser().then(options => {
-  return bootstrapLazy([["w-icon",[[1,"w-icon"]]],["my-component_4",[[1,"my-component",{"first":[1],"middle":[1],"last":[1]}],[1,"w-icon-absolute_stroked"],[1,"w-icon-alarm"],[1,"w-image",{"src":[1],"lazy":[4],"fit":[1],"placeholder":[1],"errorText":[1,"error-text"],"loading":[32],"error":[32],"imageWidth":[32],"imageHeight":[32],"show":[32]},[[11,"scroll","handleScroll"]]]]]], options);
+  return bootstrapLazy([["my-component",[[1,"my-component",{"first":[1],"middle":[1],"last":[1]}]]],["w-icon",[[1,"w-icon"]]],["w-icon-absolute_stroked",[[1,"w-icon-absolute_stroked"]]],["w-icon-alarm",[[1,"w-icon-alarm"]]],["w-image",[[1,"w-image",{"src":[1],"lazy":[4],"fit":[1],"placeholder":[1],"errorText":[1,"error-text"],"loading":[32],"error":[32],"imageWidth":[32],"imageHeight":[32],"show":[32]},[[11,"scroll","handleScroll"]]]]]], options);
 });

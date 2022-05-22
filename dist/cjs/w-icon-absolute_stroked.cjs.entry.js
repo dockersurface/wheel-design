@@ -1,18 +1,21 @@
-import { proxyCustomElement, HTMLElement, h } from '@stencil/core/internal/client';
-import { I as Icon } from './icon.js';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+const index = require('./index-4658e1c0.js');
+const icon = require('./icon-21c46ce6.js');
+require('./index-956d91b4.js');
 
 const wIconCss = ".semi-icon{display:inline-block;font-style:normal;line-height:0;height:1em;width:1em;text-align:center;text-transform:none;text-rendering:optimizeLegibility;fill:currentColor}.semi-icon-extra-small{font-size:8px}.semi-icon-small{font-size:12px}.semi-icon-default{font-size:16px}.semi-icon-large{font-size:20px}.semi-icon-extra-large{font-size:24px}.semi-icon-spinning{animation:0.6s linear infinite semi-icon-animation-rotate}@keyframes semi-icon-animation-rotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}";
 
-const WIconAbsoluteStroked = /*@__PURE__*/ proxyCustomElement(class extends HTMLElement {
-  constructor() {
-    super();
-    this.__registerHost();
-    this.__attachShadow();
+const WIconAbsoluteStroked = class {
+  constructor(hostRef) {
+    index.registerInstance(this, hostRef);
   }
   render() {
     // 参数透传
     const { size, style, className, rotate, spin, type } = this;
-    return (h(Icon, { svg: {
+    return (index.h(icon.Icon, { svg: {
         name: 'svg',
         type: 'element',
         value: '',
@@ -37,20 +40,7 @@ const WIconAbsoluteStroked = /*@__PURE__*/ proxyCustomElement(class extends HTML
         ],
       }, size: size, style: style, className: className, rotate: rotate, spin: spin, type: type }));
   }
-  static get style() { return wIconCss; }
-}, [1, "w-icon-absolute_stroked"]);
-function defineCustomElement() {
-  if (typeof customElements === "undefined") {
-    return;
-  }
-  const components = ["w-icon-absolute_stroked"];
-  components.forEach(tagName => { switch (tagName) {
-    case "w-icon-absolute_stroked":
-      if (!customElements.get(tagName)) {
-        customElements.define(tagName, WIconAbsoluteStroked);
-      }
-      break;
-  } });
-}
+};
+WIconAbsoluteStroked.style = wIconCss;
 
-export { WIconAbsoluteStroked as W, defineCustomElement as d };
+exports.w_icon_absolute_stroked = WIconAbsoluteStroked;

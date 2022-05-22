@@ -1,5 +1,9 @@
-import { getElement, proxyCustomElement, HTMLElement, h, Host } from '@stencil/core/internal/client';
-import { f as format } from './utils.js';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+const index = require('./index-4658e1c0.js');
+const utils = require('./utils-9d1af041.js');
 
 function isDefined(value) {
   return !!value;
@@ -59,7 +63,7 @@ function ComponentName() {
     // keep es5 function here to sty in component scope
     component.render = function renderProxy() {
       /* eslint-disable react/no-this-in-sfc */
-      const host = getElement(this);
+      const host = index.getElement(this);
       const componentName = host.tagName.toLowerCase();
       // call method from tsx component if exists
       if (!!property) {
@@ -85,45 +89,23 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
         r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
   return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-const MyComponent$1 = /*@__PURE__*/ proxyCustomElement(class extends HTMLElement {
-  constructor() {
-    super();
-    this.__registerHost();
-    this.__attachShadow();
+const MyComponent = class {
+  constructor(hostRef) {
+    index.registerInstance(this, hostRef);
   }
   getText() {
-    return format(this.first, this.middle, this.last);
+    return utils.format(this.first, this.middle, this.last);
   }
   render() {
     const cssClasses = hostClasses({
       componentName: this.componentName,
     });
-    return (h(Host, { class: `${cssClasses} dasdsa---dddsd container` }, "Hello, World! I'm ", h("span", null, " ", this.getText())));
+    return (index.h(index.Host, { class: `${cssClasses} dasdsa---dddsd container` }, "Hello, World! I'm ", index.h("span", null, " ", this.getText())));
   }
-  static get style() { return myComponentCss; }
-}, [1, "my-component", {
-    "first": [1],
-    "middle": [1],
-    "last": [1]
-  }]);
+};
 __decorate([
   ComponentName()
-], MyComponent$1.prototype, "componentName", void 0);
-function defineCustomElement$1() {
-  if (typeof customElements === "undefined") {
-    return;
-  }
-  const components = ["my-component"];
-  components.forEach(tagName => { switch (tagName) {
-    case "my-component":
-      if (!customElements.get(tagName)) {
-        customElements.define(tagName, MyComponent$1);
-      }
-      break;
-  } });
-}
+], MyComponent.prototype, "componentName", void 0);
+MyComponent.style = myComponentCss;
 
-const MyComponent = MyComponent$1;
-const defineCustomElement = defineCustomElement$1;
-
-export { MyComponent, defineCustomElement };
+exports.my_component = MyComponent;

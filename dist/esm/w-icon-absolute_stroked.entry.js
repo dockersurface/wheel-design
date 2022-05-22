@@ -1,13 +1,12 @@
-import { proxyCustomElement, HTMLElement, h } from '@stencil/core/internal/client';
-import { I as Icon } from './icon.js';
+import { r as registerInstance, h } from './index-1a53a42a.js';
+import { I as Icon } from './icon-ccdc6c1a.js';
+import './index-62f9e168.js';
 
 const wIconCss = ".semi-icon{display:inline-block;font-style:normal;line-height:0;height:1em;width:1em;text-align:center;text-transform:none;text-rendering:optimizeLegibility;fill:currentColor}.semi-icon-extra-small{font-size:8px}.semi-icon-small{font-size:12px}.semi-icon-default{font-size:16px}.semi-icon-large{font-size:20px}.semi-icon-extra-large{font-size:24px}.semi-icon-spinning{animation:0.6s linear infinite semi-icon-animation-rotate}@keyframes semi-icon-animation-rotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}";
 
-const WIconAbsoluteStroked = /*@__PURE__*/ proxyCustomElement(class extends HTMLElement {
-  constructor() {
-    super();
-    this.__registerHost();
-    this.__attachShadow();
+const WIconAbsoluteStroked = class {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
   }
   render() {
     // 参数透传
@@ -37,23 +36,7 @@ const WIconAbsoluteStroked = /*@__PURE__*/ proxyCustomElement(class extends HTML
         ],
       }, size: size, style: style, className: className, rotate: rotate, spin: spin, type: type }));
   }
-  static get style() { return wIconCss; }
-}, [1, "w-icon-absolute_stroked"]);
-function defineCustomElement$1() {
-  if (typeof customElements === "undefined") {
-    return;
-  }
-  const components = ["w-icon-absolute_stroked"];
-  components.forEach(tagName => { switch (tagName) {
-    case "w-icon-absolute_stroked":
-      if (!customElements.get(tagName)) {
-        customElements.define(tagName, WIconAbsoluteStroked);
-      }
-      break;
-  } });
-}
+};
+WIconAbsoluteStroked.style = wIconCss;
 
-const WIconAbsolute_stroked = WIconAbsoluteStroked;
-const defineCustomElement = defineCustomElement$1;
-
-export { WIconAbsolute_stroked, defineCustomElement };
+export { WIconAbsoluteStroked as w_icon_absolute_stroked };

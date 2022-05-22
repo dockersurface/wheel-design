@@ -1,5 +1,5 @@
 import { h } from '@stencil/core/internal/client';
-import { a as createCommonjsModule, b as commonjsGlobal, c as classnames } from './index2.js';
+import { c as createCommonjsModule, a as commonjsGlobal, b as classnames } from './index2.js';
 
 var svgson_umd = createCommonjsModule(function (module, exports) {
 (function (global, factory) {

@@ -1,106 +1,6 @@
-import { proxyCustomElement, HTMLElement, h, Host } from '@stencil/core/internal/client';
-import { c as classnames } from './index2.js';
-
-const SPECIAL_CHARS_REGEXP = /([\:\-\_]+(.))/g;
-const MOZ_HACK_REGEXP = /^moz([A-Z])/;
-/**
- * @param first
- * @param middle
- * @param last
- */
-function format(first, middle, last) {
-  return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
-}
-/**
- * Gets class prefix 获取class 前缀
- *
- * @param suffix
- * @returns class prefix
- */
-function getClassPrefix(suffix) {
-  return suffix ? `w-${suffix}` : 'w';
-}
-/**
- * Names camel case
- *
- * @param name
- * @returns
- */
-const camelCase = function (name) {
-  return name.replace(SPECIAL_CHARS_REGEXP, (_, _separator, letter, offset) => (offset ? letter.toUpperCase() : letter)).replace(MOZ_HACK_REGEXP, 'Moz$1');
-};
-const getStyle = (element, styleName) => {
-  if (!element || !styleName)
-    return null;
-  styleName = camelCase(styleName);
-  if (styleName === 'float') {
-    styleName = 'cssFloat';
-  }
-  try {
-    const computed = document.defaultView.getComputedStyle(element, '');
-    return element.style[styleName] || computed ? computed[styleName] : null;
-  }
-  catch (e) {
-    return element.style[styleName];
-  }
-};
-/**
- * is scroll 当前元素是否具有滚动属性
- *
- * @param el
- * @param vertical
- * @returns
- */
-const isScroll = (el, vertical) => {
-  const determinedDirection = vertical !== null && vertical !== undefined;
-  const overflow = determinedDirection ? (vertical ? getStyle(el, 'overflow-y') : getStyle(el, 'overflow-x')) : getStyle(el, 'overflow');
-  return overflow.match(/(scroll|auto|overlay)/);
-};
-/**
- * get scroll container 获取父元素 直到有滚动属性的
- *
- * @param el
- * @param vertical
- * @returns
- */
-const getScrollContainer = (el, vertical) => {
-  let parent = el;
-  while (parent) {
-    if ([window, document, document.documentElement].includes(parent)) {
-      return window;
-    }
-    if (isScroll(parent, vertical)) {
-      return parent;
-    }
-    parent = parent.parentNode;
-  }
-  return parent;
-};
-/**
- * is in container 获取是否在父元素显示
- *
- * @param el
- * @param container
- * @returns
- */
-const isInContainer = (el, container) => {
-  if (!el || !container)
-    return false;
-  const elRect = el.getBoundingClientRect();
-  let containerRect;
-  if ([window, document, document.documentElement, null, undefined].includes(container)) {
-    containerRect = {
-      top: 0,
-      right: window.innerWidth,
-      bottom: window.innerHeight,
-      left: 0,
-    };
-  }
-  else {
-    containerRect = container.getBoundingClientRect();
-  }
-  return elRect.top < containerRect.bottom && elRect.bottom > containerRect.top && elRect.right > containerRect.left && elRect.left < containerRect.right;
-};
+import { r as registerInstance, h, H as Host, g as getElement } from './index-1a53a42a.js';
+import { b as classnames } from './index-62f9e168.js';
+import { i as isInContainer, g as getScrollContainer, a as getClassPrefix } from './utils-e6561512.js';
 
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
@@ -659,11 +559,9 @@ var ObjectFit;
 
 const wImageCss = ".w-image__error,.w-image__inner,.w-image__placeholder{width:100%;height:100%}.w-image{position:relative;display:inline-block;overflow:hidden}.w-image__inner{vertical-align:top}.w-image__placeholder{background:var(--w-fill-color-light)}.w-image__error{display:flex;justify-content:center;align-items:center;font-size:14px;background:var(--w-fill-color-light);color:var(--w-text-color-placeholder);vertical-align:middle}.w-image__preview{cursor:pointer}.w-image__placeholder{display:flex;align-items:center;justify-content:center}";
 
-const WImage = /*@__PURE__*/ proxyCustomElement(class extends HTMLElement {
-  constructor() {
-    super();
-    this.__registerHost();
-    this.__attachShadow();
+const WImage = class {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
     /** Prop lazy 是否懒加载 */
     this.lazy = false;
     /** Prop fit 图片填充格式 */
@@ -781,35 +679,11 @@ const WImage = /*@__PURE__*/ proxyCustomElement(class extends HTMLElement {
     const classes = classnames(classPrefix);
     return (h(Host, { style: { display: 'block' }, class: classes }, !loading && !error && h("img", { src: src, alt: "", style: styles, class: `${classes}__inner` }), loading && h("div", { class: `${classes}__placeholder` }, placeholder), error && h("div", { class: `${classes}__placeholder` }, errorText)));
   }
-  get element() { return this; }
+  get element() { return getElement(this); }
   static get watchers() { return {
     "show": ["watchHandler"]
   }; }
-  static get style() { return wImageCss; }
-}, [1, "w-image", {
-    "src": [1],
-    "lazy": [4],
-    "fit": [1],
-    "placeholder": [1],
-    "errorText": [1, "error-text"],
-    "loading": [32],
-    "error": [32],
-    "imageWidth": [32],
-    "imageHeight": [32],
-    "show": [32]
-  }, [[11, "scroll", "handleScroll"]]]);
-function defineCustomElement() {
-  if (typeof customElements === "undefined") {
-    return;
-  }
-  const components = ["w-image"];
-  components.forEach(tagName => { switch (tagName) {
-    case "w-image":
-      if (!customElements.get(tagName)) {
-        customElements.define(tagName, WImage);
-      }
-      break;
-  } });
-}
+};
+WImage.style = wImageCss;
 
-export { WImage as W, defineCustomElement as d, format as f };
+export { WImage as w_image };

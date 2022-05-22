@@ -1,77 +1,5 @@
-'use strict';
-
-const index = require('./index-4658e1c0.js');
-
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-function createCommonjsModule(fn, basedir, module) {
-	return module = {
-		path: basedir,
-		exports: {},
-		require: function (path, base) {
-			return commonjsRequire();
-		}
-	}, fn(module, module.exports), module.exports;
-}
-
-function commonjsRequire () {
-	throw new Error('Dynamic requires are not currently supported by @rollup/plugin-commonjs');
-}
-
-var classnames = createCommonjsModule(function (module) {
-/*!
-  Copyright (c) 2018 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString === Object.prototype.toString) {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes.push(key);
-						}
-					}
-				} else {
-					classes.push(arg.toString());
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
+import { h } from './index-1a53a42a.js';
+import { c as createCommonjsModule, a as commonjsGlobal, b as classnames } from './index-62f9e168.js';
 
 var svgson_umd = createCommonjsModule(function (module, exports) {
 (function (global, factory) {
@@ -1329,8 +1257,7 @@ const Icon = props => {
     outerStyle.transform = `rotate(${rotate}deg)`;
   }
   Object.assign(outerStyle, style);
-  return index.h("span", { style: outerStyle, class: classes, role: "img", "aria-label": type, innerHTML: svgson_umd.stringify(svg) });
+  return h("span", { style: outerStyle, class: classes, role: "img", "aria-label": type, innerHTML: svgson_umd.stringify(svg) });
 };
 
-exports.Icon = Icon;
-exports.classnames = classnames;
+export { Icon as I };

@@ -1,3 +1,5 @@
+'use strict';
+
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 function createCommonjsModule(fn, basedir, module) {
@@ -69,4 +71,6 @@ var classnames = createCommonjsModule(function (module) {
 }());
 });
 
-export { commonjsGlobal as a, classnames as b, createCommonjsModule as c };
+exports.classnames = classnames;
+exports.commonjsGlobal = commonjsGlobal;
+exports.createCommonjsModule = createCommonjsModule;

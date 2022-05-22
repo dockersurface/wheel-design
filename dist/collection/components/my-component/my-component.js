@@ -19,20 +19,7 @@ export class MyComponent {
       "Hello, World! I'm ",
       h("span", null,
         " ",
-        this.getText()),
-      h("w-icon-absolute_stroked", null),
-      h("w-icon-alarm", null),
-      h("div", { class: "image-container" },
-        "none",
-        h("w-image", { fit: "none", src: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c259411.jpeg" }),
-        "contain",
-        h("w-image", { fit: "contain", src: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" }),
-        "cover",
-        h("w-image", { fit: "cover", src: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" }),
-        "fill",
-        h("w-image", { fit: "fill", src: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" }),
-        "scale-down",
-        h("w-image", { fit: "scale-down", src: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" }))));
+        this.getText())));
   }
   static get is() { return "my-component"; }
   static get encapsulation() { return "shadow"; }

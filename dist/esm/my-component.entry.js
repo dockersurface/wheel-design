@@ -1,5 +1,5 @@
-import { getElement, proxyCustomElement, HTMLElement, h, Host } from '@stencil/core/internal/client';
-import { f as format } from './utils.js';
+import { g as getElement, r as registerInstance, h, H as Host } from './index-1a53a42a.js';
+import { f as format } from './utils-e6561512.js';
 
 function isDefined(value) {
   return !!value;
@@ -85,11 +85,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
         r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
   return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-const MyComponent$1 = /*@__PURE__*/ proxyCustomElement(class extends HTMLElement {
-  constructor() {
-    super();
-    this.__registerHost();
-    this.__attachShadow();
+const MyComponent = class {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
   }
   getText() {
     return format(this.first, this.middle, this.last);
@@ -100,30 +98,10 @@ const MyComponent$1 = /*@__PURE__*/ proxyCustomElement(class extends HTMLElement
     });
     return (h(Host, { class: `${cssClasses} dasdsa---dddsd container` }, "Hello, World! I'm ", h("span", null, " ", this.getText())));
   }
-  static get style() { return myComponentCss; }
-}, [1, "my-component", {
-    "first": [1],
-    "middle": [1],
-    "last": [1]
-  }]);
+};
 __decorate([
   ComponentName()
-], MyComponent$1.prototype, "componentName", void 0);
-function defineCustomElement$1() {
-  if (typeof customElements === "undefined") {
-    return;
-  }
-  const components = ["my-component"];
-  components.forEach(tagName => { switch (tagName) {
-    case "my-component":
-      if (!customElements.get(tagName)) {
-        customElements.define(tagName, MyComponent$1);
-      }
-      break;
-  } });
-}
+], MyComponent.prototype, "componentName", void 0);
+MyComponent.style = myComponentCss;
 
-const MyComponent = MyComponent$1;
-const defineCustomElement = defineCustomElement$1;
-
-export { MyComponent, defineCustomElement };
+export { MyComponent as my_component };
