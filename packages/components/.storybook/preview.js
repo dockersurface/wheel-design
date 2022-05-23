@@ -8,7 +8,7 @@ export const parameters = {
     storySort: {
       order,
       method: 'alphabetical',
-      locales: 'de-DE',
+      locales: 'zh-CN',
     },
   },
   docs: {

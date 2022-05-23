@@ -5,7 +5,7 @@ import { a, h } from '../../utils/storybook';
 
 export default {
   ...{
-    component: 'w-icon',
+    component: 'my-XXX',
     args: {},
     argTypes: {},
     customEvents: [],
@@ -13,6 +13,7 @@ export default {
   },
   markdown,
   tpl: ({ id }) => h`
-  <w-icon-alarm id="${a(id)}"></w-icon-alarm>
-  <w-icon-absolute_stroked></w-icon-absolute_stroked>`,
+    <my-XXX
+      id="${a(id)}"
+    ></my-XXX>`,
 };

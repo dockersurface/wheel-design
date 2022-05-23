@@ -5,6 +5,7 @@ const { name, version } = require('../package.json');
 
 addons.setConfig({
   theme: create({
+    base: 'light',
     brandTitle: name + ' ' + version,
     colorSecondary: '#fba308',
   }),
