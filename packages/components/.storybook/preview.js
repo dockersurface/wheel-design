@@ -11,6 +11,7 @@ export const parameters = {
       locales: 'zh-CN',
     },
   },
+  locale: 'zh-CN',
   docs: {
     extractComponentDescription: (component, { notes }) => {
       if (notes) {
