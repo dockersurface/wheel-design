@@ -11,6 +11,4 @@ declare const Story: {
   tplCompositionWithActionLogs: (args: any) => import("lit-html").TemplateResult;
 };
 export declare const Default: any;
-export declare const Modified: any;
-export declare const Slots: any;
 export default Story;

@@ -1,8 +1,6 @@
 declare const _default: {
   markdown: string;
-  tpl: ({ id }: {
-    id: any;
-  }) => import("lit-html").TemplateResult;
+  tpl: () => import("lit-html").TemplateResult;
   component: string;
   args: {};
   argTypes: {};

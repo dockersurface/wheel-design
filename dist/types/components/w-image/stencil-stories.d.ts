@@ -1,13 +1,6 @@
 declare const _default: {
   markdown: string;
-  tpl: ({ id, src, lazy, fit, placeholder, errorText }: {
-    id: any;
-    src: any;
-    lazy: any;
-    fit: any;
-    placeholder: any;
-    errorText: any;
-  }) => import("lit-html").TemplateResult;
+  tpl: ({}: {}) => import("lit-html").TemplateResult;
   component: string;
   args: {
     src: string;
