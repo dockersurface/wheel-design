@@ -5,7 +5,7 @@ set -e
 pnpm i --frozen-lockfile
 
 cd packages/components
-pnpm build
+pnpm build:stencil
 npm publish
 cd -
 

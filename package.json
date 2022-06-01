@@ -42,7 +42,7 @@
         "@types/lodash": "^4.14.182",
         "@types/lodash-es": "^4.17.6",
         "@types/svgo": "^2.3.1",
-        "wheel-design": "workspace:*",
+        "sten-wheel-design": "workspace:*",
         "@wheel-design/theme-chalk": "workspace:*",
         "camelcase": "^6.2.0",
         "dayjs": "^1.11.1",
