@@ -2,7 +2,7 @@
 
 set -e
 
-pnpm i --frozen-lockfile
+pnpm install --no-frozen-lockfile
 
 cd packages/components
 pnpm build:stencil
