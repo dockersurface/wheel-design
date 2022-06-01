@@ -3,7 +3,6 @@
 set -e
 
 pnpm i --frozen-lockfile
-pnpm update:version
 
 cd packages/components
 pnpm build
