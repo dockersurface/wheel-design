@@ -31,7 +31,6 @@ importers:
       '@types/svgo': ^2.3.1
       '@typescript-eslint/eslint-plugin': ^4.3.0
       '@typescript-eslint/parser': ^4.3.0
-      '@wheel-design/components': workspace:*
       '@wheel-design/icons': workspace:^0.0.1
       '@wheel-design/theme-chalk': workspace:*
       camelcase: ^6.2.0
@@ -80,6 +79,7 @@ importers:
       type-fest: ^2.12.2
       typescript: ^4.6.4
       wait-on: ^5.2.0
+      wheel-design: workspace:*
       write-file-webpack-plugin: ^4.5.1
     dependencies:
       '@storybook/web-components': registry.npmmirror.com/@storybook/web-components/6.4.22_dmi7kiztmliergdiiuyg7cpopy
@@ -87,7 +87,6 @@ importers:
       '@types/lodash': registry.npmmirror.com/@types/lodash/4.14.182
       '@types/lodash-es': registry.npmmirror.com/@types/lodash-es/4.17.6
       '@types/svgo': registry.npmmirror.com/@types/svgo/2.6.3
-      '@wheel-design/components': link:packages/components
       '@wheel-design/theme-chalk': link:packages/theme-chalk
       camelcase: registry.npmmirror.com/camelcase/6.3.0
       dayjs: registry.npmmirror.com/dayjs/1.11.2
@@ -99,6 +98,7 @@ importers:
       svgo: registry.npmmirror.com/svgo/2.8.0
       svgson: registry.npmmirror.com/svgson/5.2.1
       ts-dedent: registry.npmmirror.com/ts-dedent/2.2.0
+      wheel-design: link:packages/wheel-design
     devDependencies:
       '@commitlint/cli': registry.npmmirror.com/@commitlint/cli/16.3.0
       '@commitlint/config-conventional': registry.npmmirror.com/@commitlint/config-conventional/16.2.4

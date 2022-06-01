@@ -1,5 +1,5 @@
 {
-  "name": "@wheel-design/components",
+  "name": "wheel-design",
   "version": "0.0.1",
   "distDirs": {
     "stencil": "dist",
